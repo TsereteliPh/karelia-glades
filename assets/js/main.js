@@ -289,33 +289,43 @@ if (clientsCarousel) {
 
 // Функционал шапки сайта
 
-// document.addEventListener("DOMContentLoaded", function(e) {
-// 	const header = document.querySelector('.header');
+document.addEventListener("DOMContentLoaded", function(e) {
+	const header = document.querySelector('.header');
 
-// 	if (header) {
-// 		const headerBurger = header.querySelector('.header__burger');
-// 		const headerDrop = header.querySelector('.header__drop');
+	if (header) {
+		const headerBurger = header.querySelector('.header__burger');
+		const headerContent = header.querySelector('.header__content');
 
-// 		const dropOpener = () => {
-// 			header.classList.add('active');
-// 			headerBurger.classList.add('active');
-// 			headerDrop.style.maxHeight = headerDrop.scrollHeight + "px";
-// 			document.body.style.overflow = 'hidden';
-// 		}
+		if (window.innerWidth > 768) {
+			header.addEventListener('mouseover', function() {
+				this.classList.add('active');
+			});
 
-// 		const dropCloser = () => {
-// 			header.classList.remove('active');
-// 			headerBurger.classList.remove('active');
-// 			headerDrop.style.maxHeight = 0;
-// 			document.body.style.overflow = 'visible';
-// 		}
+			header.addEventListener('mouseout', function() {
+				this.classList.remove('active');
+			});
+		}
 
-// 		headerBurger.addEventListener('click', function() {
-// 			if (this.classList.contains('active')) {
-// 				dropCloser();
-// 			} else {
-// 				dropOpener();
-// 			}
-// 		})
-// 	}
-// })
+		const dropOpener = () => {
+			header.classList.add('active');
+			headerBurger.classList.add('active');
+			headerContent.style.maxHeight = headerContent.scrollHeight + "px";
+			document.body.style.overflow = 'hidden';
+		}
+
+		const dropCloser = () => {
+			header.classList.remove('active');
+			headerBurger.classList.remove('active');
+			headerContent.style.maxHeight = 0;
+			document.body.style.overflow = 'visible';
+		}
+
+		headerBurger.addEventListener('click', function() {
+			if (this.classList.contains('active')) {
+				dropCloser();
+			} else {
+				dropOpener();
+			}
+		})
+	}
+})

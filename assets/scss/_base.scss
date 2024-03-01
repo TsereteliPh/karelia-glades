@@ -116,10 +116,10 @@ iframe {
 
 .container {
 	position: relative;
-	max-width: 1400px;
+	max-width: 1270px;
 	margin: 0 auto;
 
-	@include to(1470px) {
+	@include to(1320px) {
 		max-width: 100%;
 		margin: 0 1.5rem;
 	}
@@ -130,5 +130,5 @@ iframe {
 }
 
 .main {
-	margin-bottom: auto;
+	min-height: 2000px;
 }

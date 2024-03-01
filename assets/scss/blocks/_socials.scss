@@ -1,0 +1,25 @@
+.socials {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	align-items: center;
+
+	&__item {
+		text-decoration: none;
+
+		@include mouse {
+
+			&:hover {
+
+				svg {
+					color: var(--fc-light);
+				}
+			}
+		}
+
+		svg {
+			color: var(--fc-light-gray);
+			transition: var(--transition);
+		}
+	}
+}
