@@ -1,0 +1,197 @@
+.footer {
+	position: relative;
+	padding: 65px 0 55px;
+	color: var(--fc-gray);
+	background: url(assets/images/footer-bg.jpg) no-repeat 50% bottom / cover;
+
+	@include hg {
+		padding: 40px 0;
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(#000, 0.7);
+		backdrop-filter: blur(25px);
+		content: "";
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: 250px 1fr;
+		gap: 70px 50px;
+
+		@include hg {
+			gap: 50px;
+		}
+
+		@include sm {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			align-items: center;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+
+		@include sm {
+			gap: 20px;
+		}
+	}
+
+	&__logo {
+		display: block;
+
+		@include sm {
+			order: 1;
+			margin: 30px auto 0;
+		}
+
+		svg {
+
+			@include sm {
+				width: 110px;
+				height: auto;
+			}
+		}
+	}
+
+	&__text {
+		font-size: 14px;
+
+		@include sm {
+			text-align: justify;
+		}
+	}
+
+	&__socials {
+		margin-top: 35px;
+
+		@include hg {
+			margin-top: 15px;
+		}
+
+		@include sm {
+			gap: 45px;
+			margin: 0 auto;
+		}
+
+		.socials__item {
+
+			svg {
+
+				@include sm {
+					width: 25px;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	&__menu {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px 165px;
+		align-self: center;
+		height: fit-content;
+
+		@include lg {
+			gap: 20px 100px;
+		}
+
+		@include md {
+			gap: 20px 30px;
+		}
+
+		@include sm {
+			gap: 20px 100px;
+			order: -1;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr 1fr;
+			gap: 20px 30px;
+		}
+
+		.menu-item {
+
+			a {
+				display: block;
+				width: 100%;
+				color: var(--fc-light-gray);
+				font-weight: 400;
+				font-size: 14px;
+				text-transform: uppercase;
+				text-decoration: none;
+				transition: var(--transition);
+
+				@include mouse {
+
+					&:hover {
+						color: var(--fc-light);
+					}
+				}
+			}
+		}
+
+		.current-menu-item {
+
+			a {
+				color: var(--fc-light);
+				cursor: default;
+			}
+		}
+	}
+
+	&__links {
+		display: flex;
+		grid-column: span 2;
+		gap: 50px;
+		align-items: center;
+
+		@include sm {
+			gap: 20px;
+			justify-content: space-between;
+			width: 100%;
+		}
+
+		@include xs {
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+
+	&__requisites,
+	&__policy {
+		font-size: 14px;
+		@include ui-link(var(--fc-gray));
+	}
+
+	&__policy {
+		margin-left: 140px;
+
+		@include sm {
+			margin-left: 0;
+		}
+	}
+
+	&__copyright {
+		margin-left: auto;
+		font-size: 14px;
+
+		@include sm {
+			margin-left: 0;
+		}
+
+		@include xs {
+			font-size: 18px;
+		}
+	}
+}

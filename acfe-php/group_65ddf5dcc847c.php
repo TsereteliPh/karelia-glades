@@ -199,6 +199,28 @@ acf_add_local_field_group(array(
 			'center_lng' => '29.268623089843686',
 			'acfe_field_group_condition' => 0,
 		),
+		array(
+			'key' => 'field_65e5a9e0dd189',
+			'label' => 'Текст в футере',
+			'name' => 'footer',
+			'aria-label' => '',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'acfe_textarea_code' => 0,
+			'maxlength' => '',
+			'rows' => 4,
+			'placeholder' => '',
+			'new_lines' => 'br',
+			'acfe_field_group_condition' => 0,
+		),
 	),
 	'location' => array(
 		array(
@@ -225,7 +247,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1709200202,
+	'modified' => 1709550091,
 ));
 
 endif;
