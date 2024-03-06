@@ -1,0 +1,202 @@
+.about {
+	position: relative;
+	padding: 120px 0 180px;
+	overflow: hidden;
+
+	@include hg {
+		padding: 60px 0 90px;
+	}
+
+	@include md {
+		padding: 60px 0;
+	}
+
+	@include xs {
+		padding: 45px 0 20px;
+	}
+
+	&__container {
+		z-index: var(--ui-index-2);
+		pointer-events: none;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		justify-content: center;
+		width: 60%;
+		min-height: 630px;
+		margin-left: auto;
+		padding: 0 50px 0 105px;
+		background: var(--bg-primary);
+		pointer-events: all;
+
+		@include hg {
+			gap: 30px;
+			min-height: 450px;
+			padding: 0 40px 0 80px;
+		}
+
+		@include md {
+			width: 100%;
+			min-height: auto;
+			padding: 0;
+		}
+
+		@include xs {
+			gap: 20px;
+		}
+	}
+
+	&__text {
+		line-height: 1.2;
+	}
+
+	&__advantages {
+		margin-top: 40px;
+
+		@include hg {
+			margin-top: 0;
+		}
+
+		@include xs {
+			margin-top: 20px;
+		}
+	}
+
+	&__advantages-title {
+		font-weight: 700;
+		font-size: 20px;
+		font-family: var(--font-secondary);
+	}
+
+	&__advantages-list {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		margin-top: 40px;
+
+		@include hg {
+			margin-top: 20px;
+		}
+	}
+
+	&__advantages-item {
+		display: flex;
+		gap: 30px;
+		align-items: center;
+
+		@include xs {
+			flex-direction: column;
+			gap: 15px;
+			align-items: flex-start;
+		}
+	}
+
+	&__advantages-img {
+		flex-shrink: 0;
+		width: 140px;
+		height: 60px;
+		object-fit: contain;
+	}
+
+	&__advantages-text {
+		font-weight: 400;
+		line-height: 1.2;
+	}
+
+	&__slider {
+		position: absolute;
+		top: 120px;
+		left: calc(50% - 635px);
+		width: 100%;
+		max-width: 1270px;
+		height: calc(100% - 120px - 180px);
+		overflow: visible;
+
+		@include hg {
+			top: 60px;
+			height: calc(100% - 60px - 90px);
+		}
+
+		@include to(1320px) {
+			left: 1.5rem;
+			max-width: calc(100% - 3rem);
+		}
+
+		@include md {
+			position: static;
+			max-width: calc(100% - 1.5rem);
+			height: auto;
+			margin: 40px 0.75rem 0;
+			overflow: hidden;
+		}
+	}
+
+	&__slider-item {
+		display: flex;
+
+		@include xs {
+			max-width: 70%;
+		}
+
+		img {
+			width: 40%;
+			height: 100%;
+			object-fit: cover;
+
+			@include md {
+				width: 100%;
+				height: auto;
+				aspect-ratio: 6/7;
+			}
+		}
+	}
+
+	&__slider-pagination.pagination {
+		position: absolute;
+		top: auto;
+		right: 0;
+		bottom: -125px;
+		left: auto;
+		align-items: center;
+		width: 260px;
+		height: 125px;
+		padding-left: 50px;
+
+		@include hg {
+			bottom: -90px;
+			height: 90px;
+		}
+
+		@include md {
+			position: relative;
+			right: auto;
+			bottom: auto;
+			margin-left: auto;
+		}
+
+		@include xs {
+			width: fit-content;
+			height: fit-content;
+			margin-top: 20px;
+			padding-left: 0;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url(assets/images/main-pattern.jpg) no-repeat left 45% / 450% auto;
+			opacity: 0.2;
+			content: "";
+
+			@include xs {
+				display: none;
+			}
+		}
+	}
+}

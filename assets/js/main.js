@@ -279,6 +279,33 @@ if (welcomeCarousel) {
 	});
 }
 
+const aboutCarousel = document.querySelector('.about__slider');
+
+if (aboutCarousel) {
+	let aboutSwiper = new Swiper(aboutCarousel, {
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		autoplay: {
+			delay: 4000,
+		},
+		pagination: {
+			el: '.about__slider-pagination',
+			bulletClass: 'pagination__bullet',
+			bulletActiveClass: 'active'
+		},
+		breakpoints: {
+			992: {
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				speed: 1400,
+			},
+			578: {
+				slidesPerView: 2
+			}
+		}
+	});
+}
+
 // Функционал шапки сайта
 
 document.addEventListener("DOMContentLoaded", function(e) {

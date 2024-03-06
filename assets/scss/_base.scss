@@ -145,5 +145,5 @@ iframe {
 }
 
 .main {
-	min-height: 2000px;
+	counter-reset: title-counter 0;
 }
