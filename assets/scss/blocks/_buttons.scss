@@ -1,0 +1,45 @@
+.btn {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	min-height: 90px;
+	padding: 20px 40px;
+	color: var(--fc-light);
+	font-weight: 700;
+	font-family: var(--font-secondary);
+	text-transform: uppercase;
+	background: var(--fc-dark);
+	border: none;
+
+	@include hg {
+		min-height: 60px;
+		font-size: 14px;
+	}
+}
+
+.btn-prev,
+.btn-next {
+	cursor: pointer;
+	opacity: 0.5;
+	transition: var(--transition);
+
+	@include mouse {
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&.swiper-button-disabled {
+		cursor: default;
+		opacity: 0.2;
+
+		@include mouse {
+
+			&:hover {
+				opacity: 0.2;
+			}
+		}
+	}
+}

@@ -256,33 +256,25 @@ try {
 
 //Слайдер blocks/rest
 
-const clientsCarousel = document.querySelector('.clients__container');
+const welcomeCarousel = document.querySelector('.welcome__slider');
 
-if (clientsCarousel) {
-	let clientsSwiper = new Swiper(clientsCarousel, {
-		slidesPerView: 'auto',
-		centeredSlides: true,
-		spaceBetween: 25,
-		navigation: {
-			nextEl: '.slider-panel__next',
-			prevEl: '.slider-panel__prev',
+if (welcomeCarousel) {
+	let welcomeSwiper = new Swiper(welcomeCarousel, {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 1400,
+		allowTouchMove: false,
+		autoplay: {
+			delay: 4000,
 		},
-		breakpoints: {
-			1440: {
-				slidesPerView: 4,
-				centeredSlides: false,
-			},
-			992: {
-				slidesPerView: 3,
-				centeredSlides: false,
-			},
-			769: {
-				slidesPerView: 2,
-				centeredSlides: false,
-			},
-			577: {
-				centeredSlides: false,
-			},
+		navigation: {
+			nextEl: '.welcome__slider-next',
+			prevEl: '.welcome__slider-prev',
+		},
+		pagination: {
+			el: '.welcome__slider-pagination',
+			bulletClass: 'pagination__bullet',
+			bulletActiveClass: 'active'
 		}
 	});
 }

@@ -127,6 +127,21 @@ iframe {
 	@include md {
 		margin: 0 0.75rem;
 	}
+
+	&--large {
+		position: relative;
+		max-width: 1400px;
+		margin: 0 auto;
+
+		@include hg {
+			max-width: 100%;
+			margin: 0 1.5rem;
+		}
+
+		@include md {
+			margin: 0 0.75rem;
+		}
+	}
 }
 
 .main {

@@ -69,8 +69,4 @@
 </header>
 
 <main class="main">
-	<section>
-		<div class="test container">
-
-		</div>
-	</section>
+	<?php if ( is_front_page() ) get_template_part( 'layouts/partials/welcome' ); ?>

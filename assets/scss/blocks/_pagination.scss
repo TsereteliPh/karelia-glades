@@ -1,0 +1,26 @@
+.pagination {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	width: fit-content;
+
+	&--light {
+
+		.pagination__bullet.active {
+			border-color: var(--fc-light);
+		}
+	}
+
+	&__bullet {
+		width: 6px;
+		height: 6px;
+		border: 1px solid var(--fc-light-gray);
+		border-radius: 3px;
+		transition: var(--transition);
+
+		&.active {
+			width: 40px;
+			border-color: var(--fc-dark);
+		}
+	}
+}
