@@ -2,6 +2,7 @@
 	position: relative;
 	z-index: var(--ui-index-1);
 	height: 100vh;
+	overflow: hidden;
 	color: var(--fc-light);
 
 	@include xs {
