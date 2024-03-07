@@ -306,6 +306,25 @@ if (aboutCarousel) {
 	});
 }
 
+const videoCarousel = document.querySelector('.video');
+
+if (videoCarousel) {
+	let videoSwiper = new Swiper(videoCarousel, {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 1400,
+		navigation: {
+			nextEl: '.video__next',
+			prevEl: '.video__prev',
+		},
+		pagination: {
+			el: '.video__pagination',
+			bulletClass: 'pagination__bullet',
+			bulletActiveClass: 'active'
+		}
+	});
+}
+
 // Функционал шапки сайта
 
 document.addEventListener("DOMContentLoaded", function(e) {

@@ -27,7 +27,7 @@
 		<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M15.703 25.928C5.39 22.283-.727 12.625.968 2.658 1.208 1.245 2.806.413 4.33.77l5.284 1.241c.382.09.603.443.516.792a12.328 12.328 0 0 0-.296 4.432L7.01 8.72c.726 3.668 2.835 6.998 5.956 9.405l2.824-1.487a15.401 15.401 0 0 0 4.357 1.983c.376.105.6.457.494.803l-1.462 4.792c-.422 1.383-2.011 2.228-3.476 1.71Z"/>
 	</symbol>
 	<symbol fill="none" viewBox="0 0 22 25" id="icon-play">
-		<path stroke="currentColor" stroke-width="2" d="m1.847 2.605 17.386 10.037L1.847 22.68V2.605Z"/>
+		<path stroke="currentColor" stroke-width="1" d="m1.847 2.605 17.386 10.037L1.847 22.68V2.605Z"/>
 	</symbol>
 	<symbol fill="none" viewBox="0 0 31 30" id="icon-route">
 		<path stroke="currentColor" d="m1.17 9.384 28.126-7.685-12.902 26.147-4.926-11.27-.057-.13-.117-.081L1.169 9.384Z"/>

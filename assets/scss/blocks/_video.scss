@@ -1,0 +1,176 @@
+.video {
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	height: fit-content;
+	min-height: 100vh;
+	overflow: hidden;
+
+	@include sm {
+		min-height: 100svh;
+	}
+
+	&__slides {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__slide {
+		position: relative;
+		display: flex;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(#141414, 0.6);
+			content: "";
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: var(--ui-index-1);
+			color: var(--fc-light-gray);
+			transform: translate(-40%, -50%);
+
+			@include hg {
+				width: 80px;
+				height: auto;
+			}
+		}
+	}
+
+	&__container {
+		z-index: var(--ui-index-1);
+		display: flex;
+		gap: 80px;
+		align-items: center;
+		justify-content: flex-end;
+		width: 100%;
+		padding: 50px 0;
+		color: var(--fc-light);
+
+		@include hg {
+			padding: 30px 0;
+		}
+
+		@include lg {
+			justify-content: space-between;
+		}
+
+		@include sm {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 40px 20px;
+			margin-top: 60%;
+			padding: 30px 0 20px;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 50vw;
+			height: 100%;
+			backdrop-filter: blur(40px);
+			content: "";
+
+			@include lg {
+				left: -1.5rem;
+				width: 100vw;
+			}
+
+			@include md {
+				left: -0.75rem;
+			}
+		}
+	}
+
+	&__pagination.pagination {
+		position: absolute;
+		top: 50%;
+		bottom: auto;
+		left: 0;
+		width: fit-content;
+		transform: translateY(-50%);
+
+		@include lg {
+			position: relative;
+			top: auto;
+			left: auto;
+			transform: none;
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: var(--ui-index-1);
+		display: flex;
+		gap: 45px;
+		align-items: center;
+		max-width: 50%;
+		margin-left: auto;
+		padding-left: 50px;
+
+		@include lg {
+			max-width: 80%;
+			margin-left: 0;
+			padding-left: 0;
+		}
+
+		@include sm {
+			grid-column: span 2;
+			gap: 20px;
+			justify-content: center;
+			justify-self: center;
+			order: -1;
+			max-width: 80%;
+		}
+
+		@include xs {
+			flex-direction: column;
+		}
+	}
+
+	&__icon {
+		width: 120px;
+		height: auto;
+		object-fit: contain;
+	}
+
+	&__text {
+		max-width: 280px;
+		line-height: 1.2;
+
+		@include sm {
+			max-width: none;
+		}
+
+		@include xs {
+			text-align: center;
+		}
+	}
+
+	&__controls {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+
+		@include sm {
+			justify-self: end;
+		}
+	}
+}
