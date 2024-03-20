@@ -16,6 +16,10 @@
 	$address = get_field( 'address', 'options' );
 	$socials = get_field( 'socials', 'options' );
 	$map_link = get_field( 'map_link', 'options' );
+
+	if ( ! $map_link && is_front_page() ) $map_link = '#map';
+	if ( ! $map_link && ! is_front_page() ) $map_link = get_home_url() . '#map';
+
 ?>
 
 <header class="header<?php echo is_front_page() ? ' header--index' : ''; ?>">
@@ -24,7 +28,7 @@
 			<div class="header__link-wrapper">
 				Мы находимся
 
-				<a href="<?php echo $map_link ? $map_link : '#map'; ?>" class="header__link">
+				<a href="<?php echo $map_link; ?>" class="header__link">
 					тут
 					<span></span>
 				</a>
@@ -46,7 +50,7 @@
 			</a>
 
 			<div class="header__controls">
-				<a href="<?php echo $map_link ? $map_link : '#map'; ?>" class="header__route" aria-label="Открыть карту">
+				<a href="<?php echo $map_link; ?>" class="header__route" aria-label="Открыть карту">
 					<svg width="31" height="30"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-route"></use></svg>
 				</a>
 

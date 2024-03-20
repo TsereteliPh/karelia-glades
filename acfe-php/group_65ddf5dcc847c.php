@@ -233,7 +233,7 @@ acf_add_local_field_group(array(
 			'name' => 'map_link',
 			'aria-label' => '',
 			'type' => 'link',
-			'instructions' => 'Не заполнять это поле, если на странице есть блок с картой',
+			'instructions' => 'Не заполнять это поле, если на главной странице есть блок с картой',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -292,7 +292,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1710947247,
+	'modified' => 1710948918,
 ));
 
 endif;
