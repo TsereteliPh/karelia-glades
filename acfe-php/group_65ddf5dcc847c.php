@@ -179,6 +179,34 @@ acf_add_local_field_group(array(
 			'acfe_group_modal_size' => 'large',
 		),
 		array(
+			'key' => 'field_65fadca8fc98b',
+			'label' => 'Фото офиса',
+			'name' => 'office',
+			'aria-label' => '',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'uploader' => '',
+			'acfe_thumbnail' => 0,
+			'return_format' => 'id',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+			'preview_size' => 'medium',
+			'acfe_field_group_condition' => 0,
+			'library' => 'all',
+		),
+		array(
 			'key' => 'field_65e051fe1baf6',
 			'label' => 'Карта',
 			'name' => 'map',
@@ -247,7 +275,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1709550091,
+	'modified' => 1710939369,
 ));
 
 endif;
