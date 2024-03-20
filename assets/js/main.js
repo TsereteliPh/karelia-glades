@@ -361,16 +361,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		const headerBurger = header.querySelector('.header__burger');
 		const headerContent = header.querySelector('.header__content');
 
-		if (window.innerWidth > 768) {
-			header.addEventListener('mouseover', function() {
-				this.classList.add('active');
-			});
-
-			header.addEventListener('mouseout', function() {
-				this.classList.remove('active');
-			});
-		}
-
 		const dropOpener = () => {
 			header.classList.add('active');
 			headerBurger.classList.add('active');
@@ -395,6 +385,18 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	}
 })
 
+//Функционал сайдбара
+const sidebar = document.querySelector('.sidebar');
+
+if (sidebar) {
+	sidebar.addEventListener('mouseover', function() {
+		this.classList.add('active');
+	});
+
+	sidebar.addEventListener('mouseout', function() {
+		this.classList.remove('active');
+	});
+}
 
 //Функционал блока .faq__list
 

@@ -1,6 +1,7 @@
 html {
 	box-sizing: border-box;
 	min-width: 360px;
+	scroll-behavior: smooth;
 }
 
 *,
@@ -145,5 +146,6 @@ iframe {
 }
 
 .main {
+	margin-bottom: auto;
 	counter-reset: title-counter 0;
 }

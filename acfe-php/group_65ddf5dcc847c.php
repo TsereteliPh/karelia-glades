@@ -228,6 +228,23 @@ acf_add_local_field_group(array(
 			'acfe_field_group_condition' => 0,
 		),
 		array(
+			'key' => 'field_65fafb80ace7c',
+			'label' => 'Ссылка на карту в шапке сайта',
+			'name' => 'map_link',
+			'aria-label' => '',
+			'type' => 'link',
+			'instructions' => 'Не заполнять это поле, если на странице есть блок с картой',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'acfe_field_group_condition' => 0,
+		),
+		array(
 			'key' => 'field_65e5a9e0dd189',
 			'label' => 'Текст в футере',
 			'name' => 'footer',
@@ -275,7 +292,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1710939369,
+	'modified' => 1710947247,
 ));
 
 endif;
