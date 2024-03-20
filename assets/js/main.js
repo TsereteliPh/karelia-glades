@@ -394,3 +394,31 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		})
 	}
 })
+
+
+//Функционал блока .faq__list
+
+const faqList = document.querySelector('.faq__list');
+
+if (faqList) {
+	const faqItemBtns = faqList.querySelectorAll('.faq__button');
+
+	const faqItemBtnsClose = () => {
+		for (let btn of faqItemBtns) {
+			btn.classList.remove('active');
+			btn.nextElementSibling.style.maxHeight = 0;
+		}
+	}
+
+	faqItemBtns.forEach(btn => {
+		btn.addEventListener('click', function() {
+			if (this.classList.contains('active')) {
+				faqItemBtnsClose();
+			} else {
+				faqItemBtnsClose();
+				this.classList.add('active');
+				slideToggle(this.nextElementSibling);
+			}
+		})
+	});
+}
