@@ -13,20 +13,6 @@
 
 	&::before {
 		position: absolute;
-		top: 65px;
-		left: calc(50% + 635px);
-		width: 310px;
-		height: 400px;
-		background: url(assets/images/image-text-bg.jpg) no-repeat 50% / contain;
-		content: "";
-
-		@include hg {
-			display: none;
-		}
-	}
-
-	&::after {
-		position: absolute;
 		bottom: 0;
 		left: calc(50% + 635px);
 		width: 310px;
@@ -55,6 +41,18 @@
 		@include sm {
 			flex-direction: column-reverse;
 			align-items: flex-start;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: -35px;
+		left: calc(50% + 635px);
+		color: #f1f1f1;
+		content: "";
+
+		@include hg {
+			display: none;
 		}
 	}
 
