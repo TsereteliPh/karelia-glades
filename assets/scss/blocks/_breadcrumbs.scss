@@ -1,0 +1,60 @@
+.breadcrumb {
+	position: absolute;
+	top: 240px;
+	z-index: var(--ui-index-2);
+	width: 100%;
+
+	@include hg {
+		top: 130px;
+	}
+
+	@include sm {
+		top: 150px;
+	}
+
+	@include xs {
+		top: 120px;
+	}
+
+	.container {
+
+		> span {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			align-items: center;
+			color: var(--fc-gray);
+			font-weight: 400;
+			font-size: 14px;
+
+			span {
+
+				a {
+					text-decoration: none;
+					cursor: pointer;
+					@include ui-link(inherit);
+				}
+			}
+		}
+	}
+
+	&_home {
+		@include xs {
+			display: block;
+			width: 20px;
+			height: 20px;
+			font-size: 0;
+			background: url(assets/images/icon-homepage.svg) no-repeat 50% / contain;
+		}
+	}
+
+	&_separator {
+		flex-shrink: 0;
+		@include ui-triangle(to right, 6px, 6px, var(--fc-gray));
+	}
+
+	&_last {
+		color: var(--fc-light-gray);
+		cursor: default;
+	}
+}

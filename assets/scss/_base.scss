@@ -148,4 +148,20 @@ iframe {
 .main {
 	margin-bottom: auto;
 	counter-reset: title-counter 0;
+
+	&--indent {
+		margin-top: 240px;
+
+		@include hg {
+			margin-top: 130px;
+		}
+
+		@include sm {
+			margin-top: 150px;
+		}
+
+		@include xs {
+			margin-top: 120px;
+		}
+	}
 }

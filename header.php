@@ -95,6 +95,14 @@
 	</div>
 </header>
 
+<?php if( ! is_front_page() && function_exists( 'yoast_breadcrumb' ) ) : ?>
+	<div class="breadcrumb">
+		<div class="container">
+			<?php echo yoast_breadcrumb(); ?>
+		</div>
+	</div>
+<?php endif ?>
+
 <aside class="sidebar">
 	<a href="<?php echo bloginfo( 'url' ); ?>" class="sidebar__logo" aria-label="Логотип компании Поляны Карелия">
 		<svg width="68" height="97"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
@@ -128,5 +136,5 @@
 	</div>
 </aside>
 
-<main class="main">
+<main class="main<?php echo is_front_page() ? '' : ' main--indent'; ?>">
 	<?php if ( is_front_page() ) get_template_part( 'layouts/partials/welcome' ); ?>
