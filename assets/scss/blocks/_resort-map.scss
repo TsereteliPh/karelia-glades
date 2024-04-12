@@ -1,0 +1,180 @@
+.resort-map {
+	padding: 75px 0;
+	color: var(--fc-light);
+	background: var(--bg-secondary);
+
+	@include hg {
+		padding: 60px 0;
+	}
+
+	&__title {
+		max-width: 50%;
+		margin-left: auto;
+
+		@include md {
+			max-width: none;
+		}
+	}
+
+	&__content {
+		display: flex;
+		gap: 80px;
+		margin-top: 60px;
+
+		@include hg {
+			gap: 50px;
+			margin-top: 40px;
+		}
+
+		@include md {
+			flex-direction: column;
+		}
+
+		@include xs {
+			gap: 30px;
+			margin-top: 30px;
+		}
+	}
+
+	&__tabs-wrapper {
+		flex: 1 0 30%;
+	}
+
+	&__label,
+	&__tab {
+		font-weight: 300;
+		font-size: 20px;
+		font-family: var(--font-secondary);
+	}
+
+	&__label {
+
+		@include md {
+			display: none;
+		}
+	}
+
+	&__tabs {
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+		counter-reset: resort-map-counter 0;
+
+		@include hg {
+			margin-top: 10px;
+		}
+
+		@include md {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 15px;
+			margin-top: 0;
+		}
+	}
+
+	&__tab {
+		display: flex;
+		gap: 60px;
+		align-items: center;
+		padding: 30px 0;
+		color: var(--fc-gray);
+		border-bottom: 1px solid var(--fc-gray);
+		cursor: pointer;
+		transition: var(--transition);
+		counter-increment: resort-map-counter 1;
+
+		@include hg {
+			gap: 30px;
+		}
+
+		@include md {
+			flex: 1 0 250px;
+			padding: 15px 30px;
+			color: var(--fc-light-gray);
+			font-size: 18px;
+			border: 1px solid var(--fc-gray);
+		}
+
+		@include sm {
+			flex-basis: fit-content;
+			justify-content: center;
+			height: 100%;
+		}
+
+		@include xs {
+			padding: 10px 20px;
+		}
+
+		@include mouse {
+
+			&:hover {
+				color: var(--fc-light-gray);
+				border-color: var(--fc-light-gray);
+			}
+		}
+
+		&::before {
+			display: block;
+			text-transform: uppercase;
+			content: counter(resort-map-counter, decimal-leading-zero);
+
+			@include sm {
+				display: none;
+			}
+		}
+
+		&.active {
+			color: var(--fc-light);
+			border-color: var(--primary);
+			cursor: default;
+
+			@include mouse {
+
+				&:hover {
+					color: var(--fc-light);
+					border-color: var(--primary);
+				}
+			}
+		}
+	}
+
+	&__holder {
+		position: relative;
+		align-self: center;
+		overflow: hidden;
+	}
+
+	&__link {
+		position: absolute;
+		display: none;
+		justify-content: center;
+		overflow: hidden;
+
+		@include mouse {
+
+			&:hover {
+
+				img {
+					filter: brightness(1);
+				}
+			}
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 16/9;
+			transition: all 0.5s ease-out;
+
+			@include mouse {
+				filter: brightness(0.5);
+			}
+		}
+
+		&.active {
+			position: relative;
+			display: flex;
+			animation: tabShow 0.4s ease-out; // From animations.scss
+		}
+	}
+}
