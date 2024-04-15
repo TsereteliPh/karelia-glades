@@ -141,12 +141,14 @@
 	&__holder {
 		position: relative;
 		align-self: center;
+		width: 100%;
 		overflow: hidden;
 	}
 
 	&__link {
 		position: absolute;
 		display: none;
+		align-items: center;
 		justify-content: center;
 		overflow: hidden;
 
@@ -164,6 +166,7 @@
 			width: 100%;
 			height: auto;
 			aspect-ratio: 16/9;
+			object-fit: cover;
 			transition: all 0.5s ease-out;
 
 			@include mouse {
