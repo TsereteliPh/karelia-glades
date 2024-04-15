@@ -14,7 +14,7 @@
 	transition: all 0.5s ease-out;
 
 	@include hg {
-		padding: 20px 40px;
+		padding: 20px 35px;
 	}
 
 	@include sm {
@@ -90,6 +90,19 @@
 
 		@include hg {
 			margin-top: 40px;
+		}
+
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: var(--fc-gray);
+			border-radius: 2px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: transparent;
 		}
 	}
 
