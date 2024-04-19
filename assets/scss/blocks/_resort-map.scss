@@ -7,6 +7,10 @@
 		padding: 60px 0;
 	}
 
+	@include xs {
+		padding: 30px 0;
+	}
+
 	&__title {
 		max-width: 50%;
 		margin-left: auto;
@@ -42,7 +46,6 @@
 
 	&__label,
 	&__tab {
-		font-weight: 300;
 		font-size: 20px;
 		font-family: var(--font-secondary);
 	}
