@@ -11,7 +11,7 @@
 
 				<div class="container map__container">
 					<div class="map__content">
-						<svg class="map__logo" width="130" height="160"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo-secondary"></use></svg>
+						<svg class="map__logo" width="100" height="125"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo-secondary"></use></svg>
 
 						<div class="map__info">
 							<div class="map__label">Офис</div>
