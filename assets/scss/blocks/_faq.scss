@@ -156,6 +156,7 @@
 		width: 100%;
 		height: 100%;
 		aspect-ratio: 8/5;
+		overflow: hidden;
 
 		@include hg {
 			aspect-ratio: 7/4;
