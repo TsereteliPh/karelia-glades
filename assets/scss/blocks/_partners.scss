@@ -1,0 +1,99 @@
+.partners {
+	padding: 75px 0;
+
+	@include hg {
+		padding: 60px 0;
+	}
+
+	@include xs {
+		padding: 30px 0;
+	}
+
+	&__title {
+		max-width: 50%;
+		margin-left: auto;
+
+		@include md {
+			max-width: none;
+			margin-left: 0;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px 70px;
+		align-items: center;
+		justify-content: center;
+		margin-top: 100px;
+
+		@include hg {
+			gap: 30px 60px;
+			margin-top: 60px;
+		}
+
+		@include sm {
+			gap: 20px 30px;
+			margin-top: 40px;
+		}
+
+		@include xs {
+			margin-top: 30px;
+		}
+	}
+
+	&__item {
+
+		@include sm {
+			display: flex;
+			flex-grow: 1;
+			justify-content: center;
+		}
+
+		a[href] {
+			cursor: pointer;
+
+			@include mouse {
+
+				&:hover {
+					transform: scale(1.03);
+				}
+			}
+		}
+	}
+
+	&__link {
+		display: flex;
+		max-width: 220px;
+		overflow: hidden;
+		transition: var(--transition);
+
+		@include md {
+			max-width: 160px;
+		}
+
+		@include sm {
+			max-width: 120px;
+		}
+
+		@include xs {
+			max-width: 80px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			max-height: 80px;
+			object-fit: contain;
+			filter: grayscale(1);
+
+			@include sm {
+				max-height: 60px;
+			}
+
+			@include xs {
+				max-height: 40px;
+			}
+		}
+	}
+}
