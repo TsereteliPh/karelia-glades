@@ -35,33 +35,33 @@ if ( ! function_exists( 'adem_setup' ) ) {
 	//	register thumbnails
 //	add_image_size( '123x123', 123, 123, true );
 
-	//	register post types
-//	register_post_type( 'review', [
-//		'label' => null,
-//		'labels' => [
-//			'name' => 'Отзывы',
-//			'singular_name' => 'Отзыв',
-//			'add_new' => 'Добавить отзыв',
-//			'add_new_item' => 'Добавить отзыв',
-//			'edit_item' => 'Редактировать отзыв',
-//			'new_item' => 'Новый отзыв',
-//			'view_item' => 'Смотреть отзыв',
-//			'search_items' => 'Найти отзыв',
-//			'not_found' => 'Не найдено',
-//			'not_found_in_trash' => 'Не найдено в корзине',
-//			'menu_name' => 'Отзывы',
-//		],
-//		'public' => true,
-//		'show_in_menu' => true,
-//		'menu_position' => 21,
-//		'menu_icon' => 'dashicons-format-chat',
-//		'supports' => ['title', 'editor'],
-//		'taxonomies' => ['review_type'],
-//		'has_archive' => false,
-//		'rewrite' => true,
-//		'query_var' => true,
-//		'publicly_queryable' => false
-//	] );
+	// register post types
+	register_post_type( 'services', [
+		'label' => null,
+		'labels' => [
+			'name' => 'Услуги',
+			'singular_name' => 'Услуга',
+			'add_new' => 'Добавить услугу',
+			'add_new_item' => 'Добавить услугу',
+			'edit_item' => 'Редактировать услугу',
+			'new_item' => 'Новая услуга',
+			'view_item' => 'Смотреть услугу',
+			'search_items' => 'Найти услугу',
+			'not_found' => 'Не найдено',
+			'not_found_in_trash' => 'Не найдено в корзине',
+			'menu_name' => 'Услуги',
+		],
+		'public' => true,
+		'show_in_menu' => true,
+		'menu_position' => 21,
+		'menu_icon' => 'dashicons-list-view',
+		'supports' => ['title', 'editor', 'thumbnail'],
+		'taxonomies' => ['services_type'],
+		'has_archive' => false,
+		'rewrite' => false,
+		'query_var' => true,
+		'publicly_queryable' => true
+	] );
 }
 
 add_action( 'after_setup_theme', 'adem_setup' );
@@ -107,11 +107,13 @@ function adem_breadcrumbs_indent() {
 			if (breadcrumbs) {
 				const main = document.querySelector('.main');
 
-				let indent = 60;
-				if (window.innerWidth < 1440) indent = 30;
-				let mainIndent = parseInt(getComputedStyle(main).marginTop);
+				if (!main.firstElementChild.classList.contains('no-breadcrumbs-indent')) {
+					let indent = 60;
+					if (window.innerWidth < 1440) indent = 30;
+					let mainIndent = parseInt(getComputedStyle(main).marginTop);
 
-				main.style.marginTop = breadcrumbs.clientHeight + mainIndent + indent + 'px';
+					main.style.marginTop = breadcrumbs.clientHeight + mainIndent + indent + 'px';
+				}
 			}
 		</script>
 	<?php

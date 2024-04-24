@@ -157,7 +157,7 @@ acf_add_local_field_group(array(
 				'layout_66278891ab4e2' => array(
 					'key' => 'layout_66278891ab4e2',
 					'name' => 'intro-section',
-					'label' => 'Вступительный блок (Заголовок + Текст)',
+					'label' => 'Вступительный блок (Заголовок + Изображение + Текст с логотипом)',
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
@@ -678,6 +678,13 @@ acf_add_local_field_group(array(
 				'value' => 'page',
 			),
 		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'services',
+			),
+		),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
@@ -702,7 +709,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1713952936,
+	'modified' => 1713958199,
 ));
 
 endif;

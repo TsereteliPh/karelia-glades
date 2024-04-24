@@ -150,18 +150,18 @@ iframe {
 	counter-reset: title-counter 0;
 
 	&--indent {
-		margin-top: 240px;
+		margin-top: 190px;
 
 		@include hg {
-			margin-top: 130px;
+			margin-top: 110px;
 		}
 
 		@include sm {
-			margin-top: 150px;
+			margin-top: 125px;
 		}
 
 		@include xs {
-			margin-top: 120px;
+			margin-top: 100px;
 		}
 	}
 

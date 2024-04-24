@@ -352,6 +352,29 @@ if (advantagesCarousel) {
 	});
 }
 
+const singleServicesCarousel = document.querySelector('.single-services--slider');
+
+if (singleServicesCarousel) {
+	let singleServicesSwiper = new Swiper(singleServicesCarousel, {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 1400,
+		allowTouchMove: false,
+		autoplay: {
+			delay: 6000,
+		},
+		navigation: {
+			nextEl: '.single-services__next',
+			prevEl: '.single-services__prev',
+		},
+		pagination: {
+			el: '.single-services__pagination',
+			bulletClass: 'pagination__bullet',
+			bulletActiveClass: 'active'
+		}
+	});
+}
+
 // Функционал шапки сайта
 
 document.addEventListener("DOMContentLoaded", function(e) {

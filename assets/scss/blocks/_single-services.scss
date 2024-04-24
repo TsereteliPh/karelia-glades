@@ -1,0 +1,136 @@
+.single-services {
+
+	&__item {
+		height: auto;
+		min-height: 800px;
+		padding: 120px 0 140px;
+		background: no-repeat 50% / cover;
+
+		@include hg {
+			min-height: 600px;
+			padding: 80px 0 140px;
+		}
+
+		@include sm {
+			padding: 80px 0 120px;
+		}
+
+		@include xs {
+			min-height: auto;
+			padding: 80px 0 100px;
+			background-position: 50% top;
+			background-size: 100% auto;
+		}
+
+		&--light {
+
+			.single-services__item-title {
+				color: var(--fc-light);
+			}
+
+			.single-services__item-text {
+				color: var(--fc-light);
+
+				@include xs {
+					color: var(--fc-dark);
+				}
+			}
+		}
+
+		&--dark {
+
+			.single-services__item-title {
+				color: var(--fc-dark);
+			}
+
+			.single-services__item-text {
+				color: var(--fc-dark);
+			}
+		}
+	}
+
+	&__item-title {
+		font-weight: 700;
+		font-size: clamp(1.25rem, 1.077rem + 0.769vw, 2rem);
+		font-family: var(--font-secondary);
+		text-transform: uppercase;
+	}
+
+	&__item-text {
+		max-width: 640px;
+		margin-top: 110px;
+		padding-left: 90px;
+
+		@include hg {
+			margin-top: 60px;
+			padding-left: 40px;
+		}
+
+		@include md {
+			padding-left: 0;
+		}
+
+		@include sm {
+			max-width: none;
+		}
+
+		@include xs {
+			margin-top: clamp(7.5rem, -5rem + 55.556vw, 15rem);
+		}
+	}
+
+	&__panel {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: var(--ui-index-1);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 50%;
+		min-height: 120px;
+		padding: 1.5rem;
+		color: var(--fc-light);
+		background: rgba(#292929, 0.4);
+		backdrop-filter: blur(40px);
+
+		@include md {
+			padding: 0.75rem;
+		}
+
+		@include sm {
+			width: 100%;
+			min-height: 80px;
+		}
+
+		@include xs {
+			color: var(--fc-dark);
+			background: none;
+			backdrop-filter: none;
+		}
+
+		&::before {
+
+			@include xs {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url(assets/images/main-pattern.jpg) no-repeat 50% / cover;
+				opacity: 0.2;
+				content: "";
+			}
+		}
+	}
+
+	&__pagination {
+
+		.pagination__bullet.active {
+
+			@include xs {
+				border-color: var(--fc-dark);
+			}
+		}
+	}
+}
