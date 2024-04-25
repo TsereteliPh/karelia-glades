@@ -36,7 +36,11 @@
 		</section>
 
 		<?php else : ?>
-
+			<section class="single-services">
+				<div class="container">
+					<h1 class="single-services__title"><?php the_title(); ?></h1>
+				</div>
+			</section>
 		<?php
 	endif;
 ?>

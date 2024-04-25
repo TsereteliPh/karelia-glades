@@ -371,6 +371,13 @@ if (singleServicesCarousel) {
 			el: '.single-services__pagination',
 			bulletClass: 'pagination__bullet',
 			bulletActiveClass: 'active'
+		},
+		on: {
+			afterInit: function() {
+				if (this.slides.length === this.params.slidesPerView) {
+					this.el.querySelector('.single-services__panel').style.display = 'none';
+				}
+			}
 		}
 	});
 }

@@ -1,5 +1,18 @@
 .single-services {
 
+	&__title {
+		margin: 20px 0 0;
+		font-weight: 300;
+		font-size: clamp(2rem, 1.308rem + 3.077vw, 5rem);
+		font-family: var(--font-secondary);
+		text-align: center;
+		text-transform: uppercase;
+
+		@include xs {
+			margin: 10px 0 0;
+		}
+	}
+
 	&__item {
 		height: auto;
 		min-height: 800px;
