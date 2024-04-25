@@ -735,6 +735,13 @@ acf_add_local_field_group(array(
 				'value' => 'services',
 			),
 		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'villas',
+			),
+		),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
@@ -759,7 +766,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1714037775,
+	'modified' => 1714049536,
 ));
 
 endif;

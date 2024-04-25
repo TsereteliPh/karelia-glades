@@ -27,7 +27,7 @@
 	<div class="container--large header__container">
 		<div class="header__panel">
 			<a href="<?php echo bloginfo( 'url' ); ?>" class="header__logo" aria-label="Логотип компании Поляны Карелия">
-				<svg width="50" height="75"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
+				<svg width="85" height="127"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
 			</a>
 
 			<div class="header__link-wrapper">
@@ -106,7 +106,7 @@
 
 <aside class="sidebar">
 	<a href="<?php echo bloginfo( 'url' ); ?>" class="sidebar__logo" aria-label="Логотип компании Поляны Карелия">
-		<svg width="68" height="97"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
+		<svg width="100" height="140"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
 	</a>
 
 	<div class="sidebar__content">

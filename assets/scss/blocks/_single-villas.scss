@@ -1,0 +1,156 @@
+.single-villas {
+	position: relative;
+	margin-bottom: 60px;
+
+	&__thumb {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: auto;
+		max-height: 700px;
+		overflow: hidden;
+
+		@include hg {
+			max-height: 600px;
+		}
+
+		@include sm {
+			max-height: 450px;
+		}
+
+		@include xs {
+			max-height: 200px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__photo {
+		position: absolute;
+		display: none;
+		width: auto;
+		height: 430px;
+		aspect-ratio: 300/430;
+		overflow: hidden;
+		cursor: pointer;
+
+		@include hg {
+			height: 350px;
+		}
+
+		@include sm {
+			height: 250px;
+		}
+
+		@include xs {
+			height: 150px;
+		}
+
+		@include mouse {
+
+			&:hover {
+
+				img {
+					scale: 1.02;
+				}
+			}
+		}
+
+		&:first-child {
+			top: calc(700px - 430px / 2);
+			left: calc(50% - 1270px / 2);
+			display: flex;
+			align-items: center;
+
+			@include hg {
+				top: calc(600px - 350px / 2);
+				left: 1.5rem;
+			}
+
+			@include md {
+				left: 0.75rem;
+			}
+
+			@include sm {
+				top: calc(450px - 250px / 2);
+			}
+
+			@include xs {
+				top: calc(200px - 150px / 2);
+			}
+		}
+
+		&:nth-child(2) {
+			top: 170px;
+			right: 130px;
+			display: flex;
+			align-items: center;
+
+			@include lg {
+				top: 120px;
+				right: 1.5rem;
+			}
+
+			@include md {
+				right: 0.75rem;
+			}
+
+			@include sm {
+				display: none;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: var(--transition);
+		}
+	}
+
+	&__title {
+		max-width: 50%;
+		margin: 60px 0 0 auto;
+		color: var(--fc-light-gray);
+		font-weight: 300;
+		font-size: 32px;
+		font-family: var(--font-secondary);
+		line-height: 1;
+
+		@include xs {
+			max-width: none;
+			margin: 105px 0 0 auto;
+		}
+
+		span {
+			display: block;
+			color: var(--fc-dark);
+			font-size: clamp(2rem, 1.538rem + 2.051vw, 4rem);
+			text-transform: uppercase;
+		}
+	}
+
+	&__cat {
+		max-width: 50%;
+		margin: 5px 0 0 auto;
+		font-weight: 400;
+		font-size: 20px;
+
+		@include md {
+			font-size: 18px;
+		}
+
+		@include xs {
+			max-width: none;
+			font-size: 16px;
+		}
+
+		span {
+			color: var(--fc-light-gray);
+		}
+	}
+}

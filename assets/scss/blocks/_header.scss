@@ -5,12 +5,12 @@
 	z-index: var(--ui-index-4);
 	width: 100%;
 	height: fit-content;
-	padding: 50px 0;
+	padding: 30px 0;
 	color: var(--fc-light);
 	background: url(assets/images/header-bg.jpg) no-repeat 50% bottom / cover;
 
 	@include hg {
-		padding: 25px 0;
+		padding: 15px 0;
 	}
 
 	@include sm {
@@ -20,7 +20,7 @@
 	}
 
 	@include xs {
-		padding: 20px 0;
+		padding: 10px 0;
 	}
 
 	&--index {
@@ -135,9 +135,17 @@
 
 		svg {
 
-			@include xs {
-				width: 40px;
+			@include hg {
+				width: 52px;
 				height: auto;
+			}
+
+			@include sm {
+				width: 65px;
+			}
+
+			@include xs {
+				width: 55px;
 			}
 		}
 	}

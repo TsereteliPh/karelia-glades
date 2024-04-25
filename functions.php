@@ -35,7 +35,62 @@ if ( ! function_exists( 'adem_setup' ) ) {
 	//	register thumbnails
 //	add_image_size( '123x123', 123, 123, true );
 
+	//register taxonomies
+	register_taxonomy( 'villa-category', [ 'villas' ], [
+		'label'                 => '',
+		'labels'                => [
+			'name'              => 'Категории вилл',
+			'singular_name'     => 'Категория виллы',
+			'search_items'      => 'Найти категорию',
+			'all_items'         => 'Все категории',
+			'view_item '        => 'Посмотреть категорию',
+			'edit_item'         => 'Редактировать категорию',
+			'update_item'       => 'Обновить категорию',
+			'add_new_item'      => 'Добавить новую категорию',
+			'new_item_name'     => 'Новое название категории',
+			'menu_name'         => 'Категории',
+			'back_to_items'     => '← Вернуться к категориям',
+		],
+		'description'           => '',
+		'public'                => true,
+		'hierarchical'          => true,
+
+		'rewrite'               => true,
+		'capabilities'          => [],
+		'meta_box_cb'           => null,
+		'show_admin_column'     => false,
+		'show_in_rest'          => null,
+		'rest_base'             => null,
+	] );
+
 	// register post types
+	register_post_type( 'villas', [
+		'label' => null,
+		'labels' => [
+			'name' => 'Виллы',
+			'singular_name' => 'Вилла',
+			'add_new' => 'Добавить виллу',
+			'add_new_item' => 'Добавить виллу',
+			'edit_item' => 'Редактировать виллу',
+			'new_item' => 'Новая вилла',
+			'view_item' => 'Смотреть виллу',
+			'search_items' => 'Найти виллу',
+			'not_found' => 'Не найдено',
+			'not_found_in_trash' => 'Не найдено в корзине',
+			'menu_name' => 'Виллы',
+		],
+		'public' => true,
+		'show_in_menu' => true,
+		'menu_position' => 21,
+		'menu_icon' => 'dashicons-admin-multisite',
+		'supports' => ['title', 'editor', 'thumbnail'],
+		'taxonomies' => ['services_type'],
+		'has_archive' => false,
+		'rewrite' => false,
+		'query_var' => true,
+		'publicly_queryable' => true
+	] );
+
 	register_post_type( 'services', [
 		'label' => null,
 		'labels' => [
@@ -53,7 +108,7 @@ if ( ! function_exists( 'adem_setup' ) ) {
 		],
 		'public' => true,
 		'show_in_menu' => true,
-		'menu_position' => 21,
+		'menu_position' => 22,
 		'menu_icon' => 'dashicons-list-view',
 		'supports' => ['title', 'editor', 'thumbnail'],
 		'taxonomies' => ['services_type'],
