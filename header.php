@@ -5,6 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.svg" type="image/x-icon" width="16" height="16">
 	<?php wp_head(); ?>
 </head>
 
@@ -25,6 +26,10 @@
 <header class="header<?php echo is_front_page() ? ' header--index' : ''; ?>">
 	<div class="container--large header__container">
 		<div class="header__panel">
+			<a href="<?php echo bloginfo( 'url' ); ?>" class="header__logo" aria-label="Логотип компании Поляны Карелия">
+				<svg width="50" height="75"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
+			</a>
+
 			<div class="header__link-wrapper">
 				Мы находимся
 
@@ -44,10 +49,6 @@
 			<?php endif; ?>
 
 			<button class="btn header__callback" type="button" <?php //todo: callback modal ?>>Заказать звонок</button>
-
-			<a href="<?php echo bloginfo( 'url' ); ?>" class="header__logo" aria-label="Логотип компании Поляны Карелия">
-				<svg width="50" height="75"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
-			</a>
 
 			<div class="header__controls">
 				<a href="<?php echo $map_link; ?>" class="header__route" aria-label="Открыть карту">

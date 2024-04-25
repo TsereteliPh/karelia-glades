@@ -132,11 +132,6 @@
 	}
 
 	&__logo {
-		display: none;
-
-		@include sm {
-			display: block;
-		}
 
 		svg {
 
