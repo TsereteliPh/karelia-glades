@@ -1,0 +1,95 @@
+.service-schedule {
+	margin: 80px 0 40px;
+
+	@include md {
+		margin: 60px 0 40px;
+	}
+
+	@include xs {
+		margin: 30px 0;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 60px;
+
+		@include hg {
+			gap: 40px;
+		}
+
+		@include xs {
+			gap: 25px;
+		}
+	}
+
+	&__item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding-top: 60px;
+		border-top: 1px solid var(--fc-light-gray);
+
+		@include hg {
+			padding-top: 40px;
+		}
+
+		@include sm {
+			grid-template-columns: 2fr 5fr;
+			gap: 20px;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr;
+			padding-top: 25px;
+		}
+
+		&:first-child {
+			padding-top: 0;
+			border-top: none;
+		}
+	}
+
+	&__item-period {
+		color: var(--fc-light-gray);
+		font-weight: 200;
+		font-size: clamp(1.5rem, 0.923rem + 2.564vw, 4rem);
+		font-family: var(--font-secondary);
+		text-transform: uppercase;
+	}
+
+	&__item-label {
+		font-weight: 700;
+		font-size: 24px;
+	}
+
+	&__item-text {
+		margin-top: 20px;
+	}
+
+	&__item-panel {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+		width: 100%;
+		max-width: 420px;
+		margin-top: 40px;
+
+		@include xs {
+			margin: 20px auto 0;
+		}
+	}
+
+	&__item-note {
+		color: var(--fc-gray);
+		font-weight: 500;
+
+		@include xs {
+			text-align: center;
+		}
+	}
+
+	&__item-button {
+		width: 100%;
+	}
+}
