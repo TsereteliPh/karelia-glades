@@ -352,6 +352,41 @@ if (advantagesCarousel) {
 	});
 }
 
+const gallerySliderHolders = document.querySelectorAll('.gallery-slider');
+
+if (gallerySliderHolders) {
+	gallerySliderHolders.forEach(holder => {
+		let galleryBigSlider = holder.querySelector('.gallery-slider__big-slider');
+		let galleryThumbSlider = holder.querySelector('.gallery-slider__thumb-slider');
+
+		let galleryThumbSwiper = new Swiper(galleryThumbSlider, {
+			spaceBetween: 10,
+			slidesPerView: 2,
+			watchSlidesProgress: true,
+			breakpoints: {
+				1440: {
+					spaceBetween: 100,
+					slidesPerView: 4,
+				},
+				769: {
+					slidesPerView: 4,
+				},
+				577: {
+					slidesPerView: 3
+				}
+			}
+		});
+
+		let bigProductSlider = new Swiper(galleryBigSlider, {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			thumbs: {
+				swiper: galleryThumbSwiper,
+			}
+		});
+	});
+}
+
 const singleServicesCarousel = document.querySelector('.single-services--slider');
 
 if (singleServicesCarousel) {
