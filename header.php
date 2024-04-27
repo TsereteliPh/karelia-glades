@@ -48,7 +48,7 @@
 				</a>
 			<?php endif; ?>
 
-			<button class="btn header__callback" type="button" <?php //todo: callback modal ?>>Заказать звонок</button>
+			<button class="btn header__callback" type="button" data-fancybox data-src="#callback">Заказать звонок</button>
 
 			<div class="header__controls">
 				<a href="<?php echo $map_link; ?>" class="header__route" aria-label="Открыть карту">

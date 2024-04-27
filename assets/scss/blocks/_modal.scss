@@ -1,0 +1,140 @@
+.modal {
+	display: none;
+	flex-direction: column;
+	gap: 40px;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	padding: 40px 120px 80px;
+	color: var(--fc-light);
+	background: var(--bg-secondary);
+	border: 1px solid var(--primary);
+
+	@include xs {
+		gap: 25px;
+		padding: 40px 20px;
+	}
+
+	&--callback {
+		width: 80%;
+
+		@include hg {
+			padding: 40px 100px 80px;
+		}
+
+		@include md {
+			width: 90%;
+		}
+	}
+
+	:focus {
+		outline: none !important;
+	}
+
+	.carousel__button.is-close {
+		top: 15px;
+		right: 15px;
+	}
+
+	&__logo {
+		color: var(--primary);
+
+		@include xs {
+			width: 50px;
+			height: auto;
+		}
+	}
+
+	&__title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 70px;
+		font-weight: 700;
+		font-size: clamp(1.25rem, 1.077rem + 0.769vw, 2rem);
+		font-family: var(--font-secondary);
+		text-align: center;
+		text-transform: uppercase;
+
+		@include xs {
+			min-height: 50px;
+		}
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: auto;
+			height: 100%;
+			aspect-ratio: 107/75;
+			background: url(assets/images/icon-ellipse.svg) no-repeat 50% / contain;
+			transform: translate(-50%, -50%);
+			content: "";
+		}
+	}
+
+	&__text {
+		max-width: 400px;
+		font-size: 18px;
+		line-height: 1.3;
+		text-align: center;
+
+		@include md {
+			font-size: 16px;
+		}
+	}
+
+	&__form {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 20px;
+		width: 100%;
+
+		@include hg {
+			grid-template-columns: 1fr 1fr;
+			gap: 30px 20px;
+		}
+
+		@include sm {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	&__fieldset {
+
+		&--fullname {
+
+			@include hg {
+				grid-column: span 2;
+			}
+		}
+	}
+
+	&__policy {
+		grid-column: span 2;
+		align-self: center;
+		max-width: 380px;
+		color: var(--fc-light-gray);
+		font-size: 14px;
+
+		@include hg {
+			grid-column: auto;
+		}
+
+		@include sm {
+			max-width: none;
+			text-align: center;
+		}
+	}
+
+	&__submit {
+
+		@include hg {
+			width: 100%;
+			margin: 0 auto;
+		}
+	}
+}

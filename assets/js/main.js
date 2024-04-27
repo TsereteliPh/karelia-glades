@@ -91,6 +91,7 @@ function sendForm() {
 		form.addEventListener("submit", function (e) {
 			e.preventDefault();
 			const form = this;
+			form.classList.add("loader");
 			let formData = new FormData(form);
 			const formName = form.name;
 			const fileInput = form.querySelector("input[type=file]");
@@ -115,6 +116,7 @@ function sendForm() {
 			})
 				.then((response) => response.text())
 				.then((data) => {
+					form.classList.remove("loader");
 					Fancybox.close(true);
 					form.reset();
 					setTimeout(function () {

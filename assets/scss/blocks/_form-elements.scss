@@ -1,0 +1,43 @@
+.fieldset {
+	position: relative;
+	width: 100%;
+	min-height: 80px;
+	margin: -7px 0 0;
+	padding: 20px 30px 30px;
+	background: none;
+	border: 1px solid var(--fc-gray);
+	transition: var(--transition);
+
+	@include hg {
+		min-height: 60px;
+		padding: 10px 20px 20px;
+	}
+
+	&:has(input:hover),
+	&:has(input:focus) {
+		border-color: var(--primary);
+	}
+
+	&__legend {
+		padding: 0 10px;
+		color: var(--fc-light);
+		font-size: 14px;
+		font-family: var(--font-primary);
+	}
+
+	&__input {
+		width: 100%;
+		padding: 0;
+		color: var(--fc-light);
+		font-size: 14px;
+		background: transparent;
+		border: none;
+		outline: none;
+
+		&:hover,
+		&:focus {
+			border: none;
+			outline: none;
+		}
+	}
+}
