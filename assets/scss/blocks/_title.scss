@@ -52,6 +52,7 @@
 		@include xs {
 			justify-content: center;
 			padding: 0;
+			text-align: center;
 		}
 
 		&::before {
@@ -76,6 +77,18 @@
 				width: auto;
 				transform: translate(-50%, -50%);
 			}
+		}
+	}
+
+	&--default {
+		padding: 0;
+
+		@include md {
+			padding: 0;
+		}
+
+		&::before {
+			display: none;
 		}
 	}
 }
