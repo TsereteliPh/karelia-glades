@@ -207,8 +207,10 @@ function adem_travelline_script() {
 
 
 require 'inc/acf.php';
+require 'inc/load-cat.php';
 require 'inc/load-more.php';
 require 'inc/mail.php';
+require 'inc/max-pages.php';
 require 'inc/svg.php';
 require 'inc/tiny-mce.php';
 require 'inc/traffic.php';

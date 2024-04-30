@@ -199,7 +199,7 @@ function showMorePosts() {
 	show_more_btn.addEventListener("click", function (e) {
 		e.stopImmediatePropagation();
 		const container = document.querySelector(".js-show-more-container");
-		this.textContent = "Загрузка...";
+		this.classList.add("btn-show-more--loading");
 
 		const response = fetch(adem_ajax.url, {
 			method: "POST",
@@ -214,10 +214,10 @@ function showMorePosts() {
 		})
 			.then((response) => response.text())
 			.then((data) => {
-				this.innerHTML = this.dataset.text;
+				this.classList.remove("btn-show-more--loading");
 				container.insertAdjacentHTML("beforeend", data);
 				current_page++;
-				if (current_page === max_pages) this.remove();
+				if (current_page === max_pages) this.classList.add("hidden");
 			})
 			.catch((error) => {
 				console.error("Error:", error);
@@ -490,4 +490,79 @@ if (faqList) {
 			}
 		})
 	});
+}
+
+// Ajax загрузка категорий кастом постов villas
+
+const villasCatBtns = document.querySelectorAll('.villas__cat');
+
+if (villasCatBtns) {
+	const villasList = document.querySelector('.villas__list');
+
+	const checkMaxPages = async () =>
+		await fetch(adem_ajax.url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+			},
+			body: new URLSearchParams({
+				action: 'max_pages',
+				query: posts,
+			}),
+		});
+
+	villasCatBtns.forEach(btn => {
+		btn.addEventListener('click', function() {
+			const villasItems = villasList.querySelectorAll('.villas__item');
+			const showMoreBtn = document.querySelector('.js-show-more');
+
+			villasItems.forEach(item => item.classList.add('loader'));
+			showMoreBtn.classList.add('hidden');
+
+			const newQuery = JSON.parse(posts);
+			newQuery['villa-category'] = this.dataset.slug;
+			newQuery['term'] = this.dataset.slug;
+			current_page = 1;
+			posts = JSON.stringify(newQuery);
+
+			const response = fetch(adem_ajax.url, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+				},
+				body: new URLSearchParams({
+					action: 'load_cat',
+					query: posts,
+				}),
+			})
+				.then(response => response.text())
+				.then(data => {
+					for (let btn of villasCatBtns) {
+						btn.classList.remove('active');
+					}
+
+					this.classList.add('active');
+
+					villasList.innerHTML = data;
+
+					checkMaxPages()
+						.then(response => response.text())
+						.then(data => {
+							max_pages = Number(data);
+
+							if (max_pages === current_page) {
+								showMoreBtn.classList.add('hidden');
+							} else {
+								showMoreBtn.classList.remove('hidden');
+							}
+						})
+						.catch(error => {
+							console.error('Error:', error);
+						});
+				})
+				.catch((error) => {
+					console.error('Error:', error);
+				});
+		});
+	})
 }

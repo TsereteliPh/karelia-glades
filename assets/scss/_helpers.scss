@@ -1,5 +1,5 @@
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 .clearfix {
@@ -44,12 +44,5 @@
 	* {
 		opacity: 0.5 !important;
 		pointer-events: none !important;
-	}
-}
-
-@keyframes spin {
-
-	100% {
-		rotate: 360deg;
 	}
 }

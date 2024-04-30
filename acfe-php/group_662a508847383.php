@@ -57,7 +57,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_662a513f43a40',
 			'label' => 'Описание виллы',
-			'name' => 'decription',
+			'name' => 'description',
 			'aria-label' => '',
 			'type' => 'textarea',
 			'instructions' => '',
@@ -124,7 +124,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1714054478,
+	'modified' => 1714393694,
 ));
 
 endif;
