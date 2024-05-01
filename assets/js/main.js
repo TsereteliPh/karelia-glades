@@ -419,6 +419,37 @@ if (singleServicesCarousel) {
 	});
 }
 
+const villasCarousel = document.querySelector('.villas-slider__slider');
+
+if (villasCarousel) {
+	let villasSwiper = new Swiper(villasCarousel, {
+		slidesPerView: 'auto',
+		autoHeight: true,
+		spaceBetween: 30,
+		speed: 1400,
+		autoplay: {
+			delay: 4000,
+		},
+		navigation: {
+			nextEl: villasCarousel.querySelector('.villas-slider__next'),
+			prevEl: villasCarousel.querySelector('.villas-slider__prev'),
+		},
+		pagination: {
+			el: '.villas-slider__pagination',
+			bulletClass: 'pagination__bullet',
+			bulletActiveClass: 'active'
+		},
+		breakpoints: {
+			1440: {
+				spaceBetween: 130
+			},
+			992: {
+				speed: 1400,
+			},
+		}
+	});
+}
+
 // Функционал шапки сайта
 
 document.addEventListener("DOMContentLoaded", function(e) {
