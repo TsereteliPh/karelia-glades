@@ -523,6 +523,21 @@ if (faqList) {
 	});
 }
 
+// Передача услуги в модальное окно на страницы услуги
+
+const serviceModalBtns = document.querySelectorAll('.service-schedule__item-button');
+
+if (serviceModalBtns) {
+	const singUpModalInput = document.querySelector('.js-service-input');
+
+	serviceModalBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			singUpModalInput.value = btn.dataset.service;
+		});
+	});
+}
+
+
 // Ajax загрузка категорий кастом постов villas
 
 const villasCatBtns = document.querySelectorAll('.villas__cat');
