@@ -525,7 +525,7 @@ if (faqList) {
 
 // Передача услуги в модальное окно на страницы услуги
 
-const serviceModalBtns = document.querySelectorAll('.service-schedule__item-button');
+const serviceModalBtns = document.querySelectorAll('.js-service-button');
 
 if (serviceModalBtns) {
 	const singUpModalInput = document.querySelector('.js-service-input');

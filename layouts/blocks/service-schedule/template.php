@@ -22,7 +22,7 @@
 								<?php if ( $item['button'] ) : ?>
 									<div class="service-schedule__item-panel">
 										<div class="service-schedule__item-note">Время и дату уточняйте у нашего менеджера</div>
-										<button class="btn service-schedule__item-button" type="button" data-fancybox data-src="#sing-up" data-service="<?php the_title(); ?>">Записаться</button>
+										<button class="btn service-schedule__item-button js-service-button" type="button" data-fancybox data-src="#sing-up" data-service="<?php the_title(); ?>">Записаться</button>
 									</div>
 								<?php endif; ?>
 							</div>
