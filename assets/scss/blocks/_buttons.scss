@@ -21,10 +21,10 @@
 .btn-prev,
 .btn-next {
 	cursor: pointer;
-	opacity: 0.5;
 	transition: var(--transition);
 
 	@include mouse {
+		opacity: 0.5;
 
 		&:hover {
 			opacity: 1;

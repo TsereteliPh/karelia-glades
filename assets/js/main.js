@@ -431,8 +431,8 @@ if (villasCarousel) {
 			delay: 4000,
 		},
 		navigation: {
-			nextEl: villasCarousel.querySelector('.villas-slider__next'),
-			prevEl: villasCarousel.querySelector('.villas-slider__prev'),
+			nextEl: villasCarousel.parentNode.parentNode.querySelector('.villas-slider__next'),
+			prevEl: villasCarousel.parentNode.parentNode.querySelector('.villas-slider__prev'),
 		},
 		pagination: {
 			el: '.villas-slider__pagination',
@@ -446,6 +446,37 @@ if (villasCarousel) {
 			992: {
 				speed: 1400,
 			},
+		}
+	});
+}
+
+const servicesCarousel = document.querySelector('.services-slider__container');
+
+if (servicesCarousel) {
+	let servicesSwiper = new Swiper(servicesCarousel, {
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		navigation: {
+			nextEl: servicesCarousel.parentNode.querySelector('.services-slider__next'),
+			prevEl: servicesCarousel.parentNode.querySelector('.services-slider__prev'),
+		},
+		pagination: {
+			el: '.services-slider__pagination',
+			bulletClass: 'pagination__bullet',
+			bulletActiveClass: 'active'
+		},
+		breakpoints: {
+			1440: {
+				slidesPerView: 3,
+				spaceBetween: 120
+			},
+			992: {
+				slidesPerView: 3
+			},
+			769: {
+				slidesPerView: 2,
+				spaceBetween: 60
+			}
 		}
 	});
 }

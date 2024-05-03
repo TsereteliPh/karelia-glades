@@ -31,11 +31,11 @@
 
 			<div class="villas-slider__controls">
 				<div class="btn-prev villas-slider__prev">
-					<svg width="66" height="17"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-left"></use></svg>
+					<svg width="55" height="14"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-left"></use></svg>
 				</div>
 
 				<div class="btn-next villas-slider__next">
-					<svg width="66" height="17"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-right"></use></svg>
+					<svg width="55" height="14"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-right"></use></svg>
 				</div>
 			</div>
 

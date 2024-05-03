@@ -110,7 +110,7 @@ if ( ! function_exists( 'adem_setup' ) ) {
 		'show_in_menu' => true,
 		'menu_position' => 22,
 		'menu_icon' => 'dashicons-list-view',
-		'supports' => ['title', 'editor', 'thumbnail'],
+		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
 		'taxonomies' => ['services_type'],
 		'has_archive' => false,
 		'rewrite' => false,
