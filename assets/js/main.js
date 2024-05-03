@@ -568,6 +568,30 @@ if (serviceModalBtns) {
 	});
 }
 
+//Функционал блока .services__list
+
+const servicesMoreBtns = document.querySelectorAll('.services__item-more');
+
+if (servicesMoreBtns && (window.innerWidth <= 768)) {
+	servicesMoreBtns.forEach(btn => {
+		btn.addEventListener('click', function () {
+			const servicesMoreContainer = btn.parentNode.querySelector('.services__item-dropdown');
+			const servicesMoreBtnText = this.querySelector('.services__item-more-text');
+
+			if (this.classList.contains('active')) {
+				this.classList.remove('active');
+				servicesMoreBtnText.innerHTML = 'Развернуть';
+				servicesMoreContainer.classList.remove('active');
+				slideToggle(servicesMoreContainer);
+			} else {
+				this.classList.add('active');
+				servicesMoreBtnText.innerHTML = 'Свернуть';
+				servicesMoreContainer.classList.add('active');
+				slideDown(servicesMoreContainer);
+			}
+		});
+	});
+}
 
 // Ajax загрузка категорий кастом постов villas
 

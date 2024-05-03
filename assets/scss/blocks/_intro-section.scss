@@ -2,16 +2,15 @@
 	display: flex;
 	flex-direction: column;
 	gap: 80px;
-	margin-top: 60px;
+	padding-top: 60px;
 
 	@include md {
 		gap: 30px;
-		margin-top: 60px;
+		padding-top: 60px;
 	}
 
 	@include xs {
 		gap: 30px;
-		margin-top: 30px;
 	}
 
 	&--dark {
