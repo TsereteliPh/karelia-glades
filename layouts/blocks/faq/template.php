@@ -9,7 +9,7 @@
 			$faq = get_sub_field( 'faq' );
 			if ( $faq ) :
 				?>
-					<ul class="reset-list faq__list">
+					<ul class="reset-list faq__list js-accordion">
 						<?php foreach ( $faq as $item ) : ?>
 							<li class="faq__item">
 								<button class="faq__button">

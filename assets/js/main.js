@@ -31,6 +31,33 @@ function slideToggle(elem) {
 	}
 }
 
+function accordion() {
+	const accordionHolders = document.querySelectorAll('.js-accordion');
+
+	accordionHolders.forEach(accordion => {
+		const accordionBtns = accordion.querySelectorAll('button');
+
+		const accordionBtnsClose = () => {
+			for (let btn of accordionBtns) {
+				btn.classList.remove('active');
+				btn.nextElementSibling.style.maxHeight = 0;
+			}
+		}
+
+		accordionBtns.forEach(btn => {
+			btn.addEventListener('click', function() {
+				if (this.classList.contains('active')) {
+					accordionBtnsClose();
+				} else {
+					accordionBtnsClose();
+					this.classList.add('active');
+					slideToggle(this.nextElementSibling);
+				}
+			})
+		});
+	});
+}
+
 function setHeaderScrollClass() {
 	const header = document.querySelector(".header");
 
@@ -226,6 +253,8 @@ function showMorePosts() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+	accordion();
+
 	setHeaderScrollClass();
 
 	setFileName();
@@ -524,33 +553,6 @@ if (sidebar) {
 
 	sidebar.addEventListener('mouseout', function() {
 		this.classList.remove('active');
-	});
-}
-
-//Функционал блока .faq__list
-
-const faqList = document.querySelector('.faq__list');
-
-if (faqList) {
-	const faqItemBtns = faqList.querySelectorAll('.faq__button');
-
-	const faqItemBtnsClose = () => {
-		for (let btn of faqItemBtns) {
-			btn.classList.remove('active');
-			btn.nextElementSibling.style.maxHeight = 0;
-		}
-	}
-
-	faqItemBtns.forEach(btn => {
-		btn.addEventListener('click', function() {
-			if (this.classList.contains('active')) {
-				faqItemBtnsClose();
-			} else {
-				faqItemBtnsClose();
-				this.classList.add('active');
-				slideToggle(this.nextElementSibling);
-			}
-		})
 	});
 }
 
