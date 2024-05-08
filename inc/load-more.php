@@ -13,8 +13,12 @@ function load_more() {
 		while( $query->have_posts() ) {
 			$query->the_post();
 			if ( $args['post_type'] == 'villas' ) {
-				$return_html .= get_template_part('layouts/partials/cards/villa-card', null, array(
+				$return_html .= get_template_part('layouts/partials/cards/special-offer-card', null, array(
 					'class' => 'villas__item'
+				));
+			} else if ( $args['post_type'] == 'special-offers' ) {
+				$return_html .= get_template_part('layouts/partials/cards/special-offer-card', null, array(
+					'class' => 'special-offers__item'
 				));
 			}
 		}

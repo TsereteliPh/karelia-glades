@@ -68,9 +68,7 @@
 				?>
 			</ul>
 
-			<?php //if ( $query->max_num_pages > 1) : ?>
-				<button class="btn-show-more villas__button js-show-more<?php echo ( $query->max_num_pages > 1) ? '' : ' hidden'; ?>" type="button">Показать еще</button>
-			<?php //endif; ?>
+			<button class="btn-show-more villas__button js-show-more<?php echo ( $query->max_num_pages > 1) ? '' : ' hidden'; ?>" type="button">Показать еще</button>
 
 			<script>
 				let posts = '<?php echo json_encode($query->query_vars); ?>';

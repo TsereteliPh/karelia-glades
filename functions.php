@@ -117,6 +117,33 @@ if ( ! function_exists( 'adem_setup' ) ) {
 		'query_var' => true,
 		'publicly_queryable' => true
 	] );
+
+	register_post_type( 'special-offers', [
+		'label' => null,
+		'labels' => [
+			'name' => 'Спецпредложения',
+			'singular_name' => 'Спецпредложение',
+			'add_new' => 'Добавить спецпредложение',
+			'add_new_item' => 'Добавить спецпредложение',
+			'edit_item' => 'Редактировать спецпредложение',
+			'new_item' => 'Новое спецпредложение',
+			'view_item' => 'Смотреть спецпредложение',
+			'search_items' => 'Найти спецпредложение',
+			'not_found' => 'Не найдено',
+			'not_found_in_trash' => 'Не найдено в корзине',
+			'menu_name' => 'Спецпредложения',
+		],
+		'public' => true,
+		'show_in_menu' => true,
+		'menu_position' => 22,
+		'menu_icon' => 'dashicons-tickets-alt',
+		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+		'taxonomies' => ['services_type'],
+		'has_archive' => false,
+		'rewrite' => false,
+		'query_var' => true,
+		'publicly_queryable' => true
+	] );
 }
 
 add_action( 'after_setup_theme', 'adem_setup' );
@@ -163,8 +190,8 @@ function adem_breadcrumbs_indent() {
 				const main = document.querySelector('.main');
 
 				if (!main.firstElementChild.classList.contains('no-breadcrumbs-indent')) {
-					let indent = 60;
-					if (window.innerWidth < 1440) indent = 30;
+					let indent = 80;
+					if (window.innerWidth < 1440) indent = 40;
 					let mainIndent = parseInt(getComputedStyle(main).marginTop);
 
 					main.style.marginTop = breadcrumbs.clientHeight + mainIndent + indent + 'px';

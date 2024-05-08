@@ -92,3 +92,25 @@
 		}
 	}
 }
+
+.btn-light {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 60px;
+	padding: 15px 30px;
+	color: var(--fc-dark);
+	font-family: var(--font-secondary);
+	text-decoration: none;
+	background: none;
+	border: 1px solid var(--fc-light-gray);
+	transition: var(--transition);
+
+	@include mouse {
+
+		&:hover {
+			border-color: var(--fc-dark);
+		}
+	}
+}
