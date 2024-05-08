@@ -510,6 +510,35 @@ if (servicesCarousel) {
 	});
 }
 
+const specialOffersCarousel = document.querySelector('.special-offers-slider__container');
+
+if (specialOffersCarousel) {
+	let specialOffersSwiper = new Swiper(specialOffersCarousel, {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		autoHeight: true,
+		pagination: {
+			el: '.special-offers-slider__pagination',
+			bulletClass: 'pagination__bullet',
+			bulletActiveClass: 'active'
+		},
+		breakpoints: {
+			1440: {
+				spaceBetween: 120,
+				autoHeight: false
+			},
+			769: {
+				spaceBetween: 60,
+				autoHeight: false
+			},
+			577: {
+				spaceBetween: 30,
+				autoHeight: false
+			}
+		}
+	});
+}
+
 // Функционал шапки сайта
 
 document.addEventListener("DOMContentLoaded", function(e) {
