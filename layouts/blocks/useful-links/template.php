@@ -4,7 +4,7 @@
 
 	if ( $links ) :
 		?>
-			<section class="useful-links"<?php echo $bg ? ' style="background-image: url(' . $bg . ');"' : ''; ?>>
+			<section id="useful-links" class="useful-links"<?php echo $bg ? ' style="background-image: url(' . $bg . ');"' : ''; ?>>
 				<div class="container useful-links__container">
 					<?php get_template_part( '/layouts/partials/title', null, array(
 						'class' => 'useful-links__title',

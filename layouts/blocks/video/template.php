@@ -4,7 +4,7 @@
 	$text = get_sub_field( 'text' );
 	if ( $videos ) :
 		?>
-			<section class="video swiper">
+			<section id="video" class="video swiper">
 				<div class="video__slides swiper-wrapper">
 					<?php foreach ( $videos as $video ) : ?>
 						<a href="<?php echo $video[$video['type']]; ?>" class="video__slide swiper-slide" data-fancybox="video-gallery">

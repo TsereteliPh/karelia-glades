@@ -3,7 +3,7 @@
 	if ( $schedule ) :
 		?>
 
-		<section class="service-schedule">
+		<section id="service-schedule" class="service-schedule">
 			<div class="container">
 				<ul class="reset-list service-schedule__list">
 					<?php foreach ( $schedule as $item ) : ?>

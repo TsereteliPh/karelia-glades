@@ -1,4 +1,4 @@
-<section class="advantages">
+<section id="advantages" class="advantages">
 	<div class="container advantages__container">
 		<div class="advantages__info">
 			<?php get_template_part( '/layouts/partials/title', null, array(

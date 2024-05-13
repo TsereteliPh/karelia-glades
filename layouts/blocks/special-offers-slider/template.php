@@ -1,4 +1,4 @@
-<section class="special-offers-slider">
+<section id="special-offers-slider" class="special-offers-slider">
 	<div class="container special-offers-slider__container swiper">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'title--ellipse special-offers-slider__title',

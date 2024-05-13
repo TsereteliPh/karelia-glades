@@ -1,4 +1,4 @@
-<section class="special-offers">
+<section id="special-offers" class="special-offers">
 	<div class="container">
 		<?php
 			$title = get_sub_field( 'title' );

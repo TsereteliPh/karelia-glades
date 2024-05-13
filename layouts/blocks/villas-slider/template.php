@@ -1,4 +1,4 @@
-<section class="villas-slider">
+<section id="villas-slider" class="villas-slider">
 	<?php
 		$slider = get_sub_field( 'slider' );
 		if ( $slider ) :

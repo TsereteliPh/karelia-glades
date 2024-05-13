@@ -3,7 +3,7 @@
 	if ( $gallery ) :
 		?>
 
-		<section class="gallery-slider">
+		<section id="gallery-slider" class="gallery-slider">
 			<div class="container">
 				<?php get_template_part( '/layouts/partials/title', null, array(
 					'class' => 'title--ellipse gallery-slider__title',

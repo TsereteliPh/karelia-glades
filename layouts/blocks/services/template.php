@@ -1,4 +1,4 @@
-<section class="services no-breadcrumbs-indent">
+<section id="services" class="services no-breadcrumbs-indent">
 	<div class="container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'title--ellipse services__title',

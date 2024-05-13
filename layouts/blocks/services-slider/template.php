@@ -3,7 +3,7 @@
 	if ( $slider ) :
 		?>
 
-		<section class="services-slider">
+		<section id="services-slider" class="services-slider">
 			<div class="container services-slider__container swiper">
 				<?php get_template_part( '/layouts/partials/title', null, array(
 					'class' => 'title--default services-slider__title',

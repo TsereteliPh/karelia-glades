@@ -1,4 +1,4 @@
-<section class="resort-map">
+<section id="resort-map" class="resort-map">
 	<div class="container--large">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'resort-map__title',

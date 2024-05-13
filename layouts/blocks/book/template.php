@@ -1,4 +1,4 @@
-<section class="book no-breadcrumbs-indent" id="book">
+<section id="book" class="book no-breadcrumbs-indent">
 	<div class="container">
 		<?php
 			$title = get_sub_field( 'title' );

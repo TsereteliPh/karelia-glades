@@ -1,4 +1,4 @@
-<section class="main-text">
+<section id="main-text" class="main-text">
 	<div class="container">
 		<?php
 			$type = get_sub_field( 'type' );

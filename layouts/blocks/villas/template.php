@@ -1,4 +1,4 @@
-<section class="villas">
+<section id="villas" class="villas">
 	<div class="container">
 		<?php
 			$title = get_sub_field( 'title' );
@@ -20,6 +20,7 @@
 					$termList = get_terms( [
 						'taxonomy' => 'villa-category',
 						'hierarchical' => false,
+						'order' => 'DESC'
 					] );
 
 					foreach ( $termList as $key => $term ) :
@@ -41,7 +42,7 @@
 						'post_type' => 'villas',
 						'villa-category' => $termList[0]->slug,
 						'posts_per_page' => 6,
-						'paged' => 1
+						'paged' => 1,
 					] );
 
 					$posts = $query->posts;

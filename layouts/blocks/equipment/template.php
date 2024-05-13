@@ -1,4 +1,4 @@
-<section class="equipment">
+<section id="equipment" class="equipment">
 	<div class="container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'title--ellipse equipment__title',

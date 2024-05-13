@@ -1,5 +1,5 @@
 <?php $gallery = get_sub_field( 'gallery' ); ?>
-<section class="gallery">
+<section id="gallery" class="gallery">
 	<div class="container--large">
 		<div class="gallery__wrapper">
 			<div class="gallery__logo-wrapper">

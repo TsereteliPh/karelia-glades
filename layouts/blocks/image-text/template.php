@@ -1,4 +1,4 @@
-<section class="image-text">
+<section id="image-text" class="image-text">
 	<div class="container image-text__container">
 		<svg class="image-text__logo" width="310" height="400"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo--frame"></use></svg>
 

@@ -179,6 +179,38 @@ function adem_excerpt( $limit, $ID = null ) {
 	return mb_substr( get_the_excerpt( $ID ), 0, $limit ) . '...';
 }
 
+// block name
+function adem_block_name( $block ) {
+	$block_names = [
+		'about' => 'О курорте',
+		'advantages' => 'Преимущества',
+		'book' => 'Забронировать',
+		'contacts' => 'Контакты',
+		'equipment' => 'Оснащение номера',
+		'faq' => 'Вопрос-ответ',
+		'gallery-slider' => 'Галерея',
+		'gallery' => 'Галерея',
+		'image-text' => 'Локация',
+		'intro-section' => 'Информация',
+		'main-text' => 'Информация',
+		'map' => 'Карта',
+		'partners' => 'Партнеры',
+		'resort-map' => 'Карта местности',
+		'service-description' => 'Описание услуги',
+		'service-schedule' => 'Расписание услуги',
+		'services-slider' => 'Дополнительные услуги',
+		'services' => 'Услуги',
+		'special-offers-slider' => 'Спецпредложения',
+		'special-offers' => 'Спецпредложения',
+		'useful-links' => 'Полезные ссылки',
+		'video' => 'Видео',
+		'villas-slider' => 'Виллы',
+		'villas' => 'Виллы'
+	];
+
+	return $block_names[$block];
+}
+
 // Breadcrumbs indent
 add_action('wp_footer', 'adem_breadcrumbs_indent');
 function adem_breadcrumbs_indent() {

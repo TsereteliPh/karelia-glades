@@ -1,4 +1,4 @@
-<section class="contacts no-breadcrumbs-indent">
+<section id="contacts" class="contacts no-breadcrumbs-indent">
 	<div class="container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'title--default contacts__title',

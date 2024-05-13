@@ -1,4 +1,4 @@
-<section class="intro-section no-breadcrumbs-indent <?php echo 'intro-section--' . get_sub_field( 'background' ); ?>">
+<section id="intro-section" class="intro-section no-breadcrumbs-indent <?php echo 'intro-section--' . get_sub_field( 'background' ); ?>">
 	<?php
 		$title = get_sub_field( 'title' );
 		$text = get_sub_field( 'text' );
