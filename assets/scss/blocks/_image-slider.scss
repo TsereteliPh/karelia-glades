@@ -1,0 +1,85 @@
+.image-slider {
+	position: relative;
+	max-width: 100vw;
+	margin: 120px 0 60px;
+	overflow: hidden;
+
+	@include hg {
+		margin: 80px 0 40px;
+	}
+
+	@include md {
+		margin: 60px 0 40px;
+	}
+
+	@include xs {
+		margin: 40px 0;
+	}
+
+	&__container {
+		overflow: visible;
+	}
+
+	&__title {
+		max-width: 50%;
+		margin: 0 0 40px auto;
+
+		@include md {
+			max-width: none;
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__item {
+		width: fit-content;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		max-width: 480px;
+		height: auto;
+		aspect-ratio: 9/11;
+		overflow: hidden;
+
+		@include hg {
+			max-width: 400px;
+		}
+
+		@include md {
+			max-width: 350px;
+		}
+
+		@include xs {
+			max-width: 320px;
+			aspect-ratio: 7/8;
+		}
+
+		@include mouse {
+
+			&:hover {
+
+				img {
+					scale: 1.02;
+				}
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: var(--transition);
+		}
+	}
+
+	&__pagination.pagination {
+		justify-content: center;
+		margin-top: 40px;
+
+		@include sm {
+			margin-top: 20px;
+		}
+	}
+}
