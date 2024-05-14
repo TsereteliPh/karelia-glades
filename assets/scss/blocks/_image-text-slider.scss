@@ -1,0 +1,100 @@
+.image-text-slider {
+	position: relative;
+	max-width: 100vw;
+	margin: 100px 0;
+	overflow: hidden;
+
+	@include hg {
+		margin: 60px 0;
+	}
+
+	@include xs {
+		margin: 40px 0 20px;
+	}
+
+	&__title {
+		max-width: 50%;
+		margin-left: auto;
+		font-weight: 300;
+		font-size: clamp(2.5rem, 2.154rem + 1.538vw, 4rem);
+		font-family: var(--font-secondary);
+
+		@include md {
+			max-width: none;
+			margin-left: 0;
+		}
+
+		@include sm {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__container {
+		overflow: visible;
+	}
+
+	&__item {
+
+		@include sm {
+			width: 100%;
+			max-width: 400px;
+		}
+
+		@include xs {
+			max-width: 320px;
+		}
+	}
+
+	&__img {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16/9;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__text {
+		margin-top: 40px;
+		color: var(--fc-gray);
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.2;
+
+		@include sm {
+			margin-top: 20px;
+		}
+	}
+
+	&__controls {
+		width: fit-content;
+		margin: 40px 0 0 auto;
+
+		@include md {
+			margin: 20px 0 0 auto;
+		}
+
+		@include xs {
+			display: none;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: auto;
+		height: 100%;
+		color: var(--fc-light);
+		transform: translate(-50%, -50%);
+
+		@include xs {
+			height: 80%;
+		}
+	}
+}
