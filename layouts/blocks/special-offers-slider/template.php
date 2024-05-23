@@ -24,10 +24,10 @@
 					?>
 				</ul>
 
+				<div class="pagination special-offers-slider__pagination"></div>
+
 				<?php
 			endif;
 		?>
 	</div>
-
-	<div class="pagination special-offers-slider__pagination"></div>
 </section>

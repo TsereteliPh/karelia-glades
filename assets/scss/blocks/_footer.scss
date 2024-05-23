@@ -97,26 +97,20 @@
 
 	&__menu {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 1fr 1fr;
 		gap: 20px 165px;
 		align-self: center;
 		height: fit-content;
 
-		@include lg {
-			gap: 20px 100px;
-		}
-
 		@include md {
-			gap: 20px 30px;
+			gap: 20px 100px;
 		}
 
 		@include sm {
-			gap: 20px 100px;
 			order: -1;
 		}
 
 		@include xs {
-			grid-template-columns: 1fr 1fr;
 			gap: 20px 30px;
 		}
 

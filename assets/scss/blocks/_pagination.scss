@@ -2,12 +2,20 @@
 	display: flex;
 	gap: 8px;
 	align-items: center;
-	width: fit-content;
 
 	&--light {
 
 		.pagination__bullet.active {
 			border-color: var(--fc-light);
+		}
+	}
+
+	&.swiper-pagination-bullets {
+		width: fit-content;
+		margin: 30px 0 0 auto;
+
+		@include xs {
+			margin: 20px 0 0 auto;
 		}
 	}
 
