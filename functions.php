@@ -188,6 +188,7 @@ function adem_block_name( $block ) {
 		'contacts' => 'Контакты',
 		'equipment' => 'Оснащение номера',
 		'faq' => 'Вопрос-ответ',
+		'fullsize-slider' => 'Полноразмерный слайдер',
 		'gallery-slider' => 'Галерея',
 		'gallery' => 'Галерея',
 		'image-slider' => 'Слайдер изображений',
@@ -205,7 +206,6 @@ function adem_block_name( $block ) {
 		'special-offers-slider' => 'Спецпредложения',
 		'special-offers' => 'Спецпредложения',
 		'useful-links' => 'Полезные ссылки',
-		'video' => 'Видео',
 		'villas-slider' => 'Виллы',
 		'villas' => 'Виллы'
 	];

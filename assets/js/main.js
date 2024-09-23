@@ -337,21 +337,43 @@ if (aboutCarousel) {
 	});
 }
 
-const videoCarousel = document.querySelector('.video');
+const fullsizeCarousel = document.querySelector('.fullsize-slider');
 
-if (videoCarousel) {
-	let videoSwiper = new Swiper(videoCarousel, {
+if (fullsizeCarousel) {
+	const fullsizeCarouselText = fullsizeCarousel.querySelector('.fullsize-slider__text');
+	const fullsizeCarouselIcon = fullsizeCarousel.querySelector('.fullsize-slider__icon');
+
+	const slidesTextChanger = (slide) => {
+		fullsizeCarouselText.textContent = slide.dataset.caption;
+
+		if (slide.dataset.icon) {
+			fullsizeCarouselIcon.classList.remove('hidden');
+			fullsizeCarouselIcon.setAttribute('src', slide.dataset.icon)
+		} else {
+			fullsizeCarouselIcon.classList.add('hidden');
+		}
+	}
+
+	let fullsizeSwiper = new Swiper(fullsizeCarousel, {
 		slidesPerView: 1,
 		spaceBetween: 0,
 		speed: 1400,
 		navigation: {
-			nextEl: '.video__next',
-			prevEl: '.video__prev',
+			nextEl: '.fullsize-slider__next',
+			prevEl: '.fullsize-slider__prev',
 		},
 		pagination: {
-			el: '.video__pagination',
+			el: '.fullsize-slider__pagination',
 			bulletClass: 'pagination__bullet',
 			bulletActiveClass: 'active'
+		},
+		on: {
+			afterInit: function () {
+				slidesTextChanger(this.slides[this.activeIndex]);
+			},
+			slideChange: function () {
+				slidesTextChanger(this.slides[this.activeIndex]);
+			}
 		}
 	});
 }

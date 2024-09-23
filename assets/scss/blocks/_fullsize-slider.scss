@@ -1,4 +1,4 @@
-.video {
+.fullsize-slider {
 	position: relative;
 	display: flex;
 	align-items: flex-end;
@@ -74,8 +74,7 @@
 		@include sm {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 40px 20px;
-			margin-top: 60%;
+			gap: 20px 40px;
 			padding: 30px 0 20px;
 		}
 
@@ -105,6 +104,7 @@
 		bottom: auto;
 		left: 0;
 		width: fit-content;
+		margin: 0;
 		transform: translateY(-50%);
 
 		@include lg {
@@ -112,6 +112,14 @@
 			top: auto;
 			left: auto;
 			transform: none;
+		}
+
+		@include sm {
+			align-self: end;
+		}
+
+		@include xs {
+			margin: 0;
 		}
 	}
 
@@ -121,12 +129,12 @@
 		display: flex;
 		gap: 45px;
 		align-items: center;
-		max-width: 50%;
+		max-width: calc(50% - 80px - 66px);
 		margin-left: auto;
 		padding-left: 50px;
 
 		@include lg {
-			max-width: 80%;
+			max-width: none;
 			margin-left: 0;
 			padding-left: 0;
 		}
@@ -137,7 +145,6 @@
 			justify-content: center;
 			justify-self: center;
 			order: -1;
-			max-width: 80%;
 		}
 
 		@include xs {
@@ -148,16 +155,12 @@
 	&__icon {
 		width: 120px;
 		height: auto;
+		max-height: 120px;
 		object-fit: contain;
 	}
 
 	&__text {
-		max-width: 280px;
 		line-height: 1.2;
-
-		@include sm {
-			max-width: none;
-		}
 
 		@include xs {
 			text-align: center;
