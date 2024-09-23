@@ -4,6 +4,26 @@
 	gap: 20px;
 	align-items: center;
 
+	&--large {
+		gap: 10px;
+
+		.socials__item {
+			display: grid;
+			place-content: center;
+			width: 40px;
+			height: auto;
+			aspect-ratio: 1/1;
+			padding: 10px;
+			background: var(--fc-dark);
+			border-radius: 50%;
+
+			svg {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
 	&__item {
 		text-decoration: none;
 

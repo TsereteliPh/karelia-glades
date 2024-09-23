@@ -63,6 +63,26 @@
 		justify-content: space-between;
 	}
 
+	&__logo {
+
+		svg {
+
+			@include hg {
+				width: 52px;
+				height: auto;
+			}
+
+			@include sm {
+				width: 65px;
+			}
+
+			@include xs {
+				width: 55px;
+			}
+		}
+	}
+
+
 	&__link-wrapper {
 		display: flex;
 		gap: 5px;
@@ -119,34 +139,10 @@
 		}
 	}
 
-	&__callback {
-		min-width: 340px;
-
-		@include hg {
-			min-width: 250px;
-		}
+	&__panel-socials {
 
 		@include sm {
 			display: none;
-		}
-	}
-
-	&__logo {
-
-		svg {
-
-			@include hg {
-				width: 52px;
-				height: auto;
-			}
-
-			@include sm {
-				width: 65px;
-			}
-
-			@include xs {
-				width: 55px;
-			}
 		}
 	}
 
