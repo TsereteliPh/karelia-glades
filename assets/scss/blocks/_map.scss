@@ -29,6 +29,8 @@
 	}
 
 	&__container {
+		pointer-events: none;
+
 		@include sm {
 			width: 100%;
 		}
@@ -40,6 +42,7 @@
 		min-height: 235px;
 		margin-left: auto;
 		background: #181818;
+		pointer-events: all;
 
 		@include hg {
 			width: 250px;

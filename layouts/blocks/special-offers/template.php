@@ -15,7 +15,7 @@
 			<?php
 				$query = new WP_Query( [
 					'post_type' => 'special-offers',
-					'posts_per_page' => 1,
+					'posts_per_page' => 6,
 					'paged' => 1
 				] );
 

@@ -41,5 +41,5 @@
 		</div>
 	</div>
 
-	<svg class="image-text-slider__logo" width="560" height="auto"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo--frame"></use></svg>
+	<svg class="image-text-slider__logo" width="560"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo--frame"></use></svg>
 </section>

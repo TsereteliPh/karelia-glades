@@ -137,7 +137,12 @@
 		}
 	}
 
-	&__pagination {
+	&__pagination.pagination {
+		margin: 0;
+
+		@include xs {
+			margin: 0;
+		}
 
 		.pagination__bullet.active {
 
@@ -145,5 +150,10 @@
 				border-color: var(--fc-dark);
 			}
 		}
+	}
+
+	&__controls {
+		position: relative;
+		z-index: var(--ui-index-1);
 	}
 }

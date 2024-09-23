@@ -223,8 +223,8 @@ acf_add_local_field_group(array(
 			'height' => 400,
 			'map_type' => 'map',
 			'zoom' => 10,
-			'center_lat' => '60.29260196526636',
-			'center_lng' => '29.268623089843686',
+			'center_lat' => '60.378929197462064',
+			'center_lng' => '29.15217423443598',
 			'acfe_field_group_condition' => 0,
 		),
 		array(
@@ -292,7 +292,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1710948918,
+	'modified' => 1727077913,
 ));
 
 endif;
