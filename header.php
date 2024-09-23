@@ -15,7 +15,6 @@
 <?php
 	$tel = get_field( 'tel', 'options' );
 	$address = get_field( 'address', 'options' );
-	$header_socials = get_field( 'header_socials', 'options' );
 	$socials = get_field( 'socials', 'options' );
 	$map_link = get_field( 'map_link', 'options' );
 
@@ -49,9 +48,9 @@
 				</a>
 			<?php endif; ?>
 
-			<?php if ( $header_socials ) : ?>
+			<?php if ( $socials ) : ?>
 				<div class="socials socials--large header__panel-socials">
-					<?php foreach ( $header_socials as $item ) : ?>
+					<?php foreach ( $socials as $item ) : ?>
 						<a href="<?php echo $item['link']; ?>" class="socials__item">
 							<svg width="25" height="25"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-<?php echo $item['social']; ?>"></use></svg>
 						</a>
