@@ -125,7 +125,7 @@ acf_add_local_field_group(array(
 			'layout' => 'table',
 			'pagination' => 0,
 			'min' => 0,
-			'max' => 3,
+			'max' => 0,
 			'collapsed' => '',
 			'button_label' => 'Добавить преимущество',
 			'acfe_field_group_condition' => 0,
@@ -176,7 +176,7 @@ acf_add_local_field_group(array(
 					),
 					'default_value' => '',
 					'acfe_textarea_code' => 0,
-					'maxlength' => 220,
+					'maxlength' => '',
 					'rows' => 3,
 					'placeholder' => '',
 					'new_lines' => '',
@@ -266,7 +266,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1709729212,
+	'modified' => 1727174735,
 ));
 
 endif;

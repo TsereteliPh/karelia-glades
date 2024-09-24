@@ -24,29 +24,23 @@
 	&__content {
 		display: flex;
 		flex-direction: column;
-		gap: 40px;
+		gap: 20px;
 		justify-content: center;
 		width: 60%;
 		min-height: 630px;
 		margin-left: auto;
-		padding: 0 50px 0 105px;
+		padding: 0 40px;
 		background: #f2f2f2;
 		pointer-events: all;
 
 		@include hg {
-			gap: 30px;
 			min-height: 450px;
-			padding: 0 40px 0 80px;
 		}
 
 		@include md {
 			width: 100%;
 			min-height: auto;
 			padding: 0;
-		}
-
-		@include xs {
-			gap: 20px;
 		}
 	}
 
@@ -55,7 +49,7 @@
 	}
 
 	&__advantages {
-		margin-top: 40px;
+		margin-top: 20px;
 
 		@include hg {
 			margin-top: 0;
@@ -75,8 +69,8 @@
 	&__advantages-list {
 		display: flex;
 		flex-direction: column;
-		gap: 40px;
-		margin-top: 40px;
+		gap: 20px;
+		margin-top: 20px;
 
 		@include hg {
 			margin-top: 20px;
@@ -85,19 +79,19 @@
 
 	&__advantages-item {
 		display: flex;
-		gap: 30px;
+		gap: 20px;
 		align-items: center;
 
 		@include xs {
 			flex-direction: column;
-			gap: 15px;
+			gap: 10px;
 			align-items: flex-start;
 		}
 	}
 
 	&__advantages-img {
 		flex-shrink: 0;
-		width: 140px;
+		width: 80px;
 		height: 60px;
 		object-fit: contain;
 	}
