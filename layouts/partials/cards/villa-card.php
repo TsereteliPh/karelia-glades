@@ -1,14 +1,34 @@
 <li class="villa-card <?php echo $args['class']; ?>">
-	<div class="villa-card__thumb-wrapper">
-		<div class="villa-card__thumb">
+	<div class="villa-card__gallery swiper">
+		<div class="villa-card__gallery-wrapper swiper-wrapper">
 			<?php
-				if ( get_the_post_thumbnail_url() ) {
-					the_post_thumbnail( 'full' );
-				} else {
-					echo wp_get_attachment_image( 17, 'full', false );
+				$thumb = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+				$gallery = get_field( 'gallery', get_the_ID() );
+
+				if ( $thumb ) the_post_thumbnail( 'full', array( 'class' => 'villa-card__gallery-img swiper-slide' ) );
+
+				if ( $gallery ) {
+					foreach ( $gallery as $photo ) {
+						echo wp_get_attachment_image( $photo['id'], 'full', false, array(
+							'class' => 'villa-card__gallery-img swiper-slide'
+						) );
+					}
+				}
+
+				if ( ! $thumb && ! $gallery ) {
+					echo wp_get_attachment_image( 17, 'full', false, array(
+						'class' => 'villa-card__gallery-img swiper-slide'
+					) );
 				}
 			?>
 		</div>
+
+		<?php if ( $gallery ) : ?>
+			<div class="villa-card__gallery-prev"></div>
+			<div class="villa-card__gallery-next"></div>
+
+			<div class="pagination pagination--light villa-card__gallery-pagination"></div>
+		<?php endif; ?>
 	</div>
 
 	<div class="villa-card__content">

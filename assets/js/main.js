@@ -475,7 +475,6 @@ const villasCarousel = document.querySelector('.villas-slider__slider');
 if (villasCarousel) {
 	let villasSwiper = new Swiper(villasCarousel, {
 		slidesPerView: 'auto',
-		autoHeight: true,
 		spaceBetween: 30,
 		speed: 1400,
 		autoplay: {
@@ -498,6 +497,30 @@ if (villasCarousel) {
 				speed: 1400,
 			},
 		}
+	});
+}
+
+const villaCardCarousels = document.querySelectorAll('.villa-card__gallery');
+
+const villaCardSwiperInit = function (slider) {
+	let villasCardSwiper = new Swiper(slider, {
+		slidesPerView: 1,
+		resistanceRatio: 0.3,
+		navigation: {
+			nextEl: slider.querySelector('.villa-card__gallery-next'),
+			prevEl: slider.querySelector('.villa-card__gallery-prev'),
+		},
+		pagination: {
+			el: slider.querySelector('.villa-card__gallery-pagination'),
+			bulletClass: 'pagination__bullet',
+			bulletActiveClass: 'active'
+		},
+	});
+}
+
+if (villaCardCarousels) {
+	villaCardCarousels.forEach(slider => {
+		villaCardSwiperInit(slider);
 	});
 }
 
@@ -767,6 +790,14 @@ if (villasCatBtns) {
 					this.classList.add('active');
 
 					villasList.innerHTML = data;
+
+					const sliders = villasList.querySelectorAll('.swiper');
+
+					if (sliders) {
+						sliders.forEach(slider => {
+							villaCardSwiperInit(slider);
+						});
+					}
 
 					checkMaxPages()
 						.then(response => response.text())
