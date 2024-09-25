@@ -11,22 +11,28 @@
 						'title' => get_sub_field('title')
 					) ); ?>
 
-					<nav class="useful-links__links">
-						<?php foreach ( $links as $item ) : ?>
-							<?php
-								$link = $item['link'];
-								$bg = $item['bg'];
-							?>
+					<div class="useful-links__links">
+						<?php foreach ( $links as $key => $item ) : ?>
+							<button
+								class="useful-links__link"
+								type="button"
+								<?php echo $item['desc'] ? 'data-fancybox data-src="#useful-link-' . $key . '"' : ''; ?>
+								<?php echo $item['bg'] ? ' style="background-image: url(' . $item['bg'] . ');"' : ''; ?>
+							>
+								<div class="useful-links__label"><?php echo $item['label']; ?></div>
 
-							<a href="<?php echo $link['url']; ?>" class="useful-links__link" target="<?php echo $link['target']; ?>"<?php echo $bg ? ' style="background-image: url(' . $bg . ');"' : ''; ?>>
-								<div class="useful-links__label"><?php echo $link['title']; ?></div>
-
-								<?php if ( $item['text'] ) : ?>
-									<div class="useful-links__text"><?php echo $item['text']; ?></div>
+								<?php if ( $item['small_desc'] ) : ?>
+									<div class="useful-links__small-desc"><?php echo $item['small_desc']; ?></div>
 								<?php endif; ?>
-							</a>
+							</button>
+
+							<?php if ( $item['desc'] ) : ?>
+								<div id="useful-link-<?php echo $key; ?>" class="modal useful-links__desc">
+									<?php echo $item['desc']; ?>
+								</div>
+							<?php endif; ?>
 						<?php endforeach; ?>
-					</nav>
+					</div>
 				</div>
 			</section>
 		<?php
