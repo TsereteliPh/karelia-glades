@@ -1,0 +1,154 @@
+.small-specials {
+	margin: 80px 0 40px;
+
+	@include md {
+		margin: 60px 0 40px;
+	}
+
+	@include xs {
+		margin: 30px 0;
+	}
+
+	&__title {
+		max-width: 50%;
+		margin: 0 0 40px auto;
+
+		@include md {
+			max-width: none;
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px 20px;
+
+		@include md {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include sm {
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+
+		@include xs {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+
+		@include xs {
+			flex: 1 0 200px;
+			width: 100%;
+		}
+	}
+
+	&__item-button {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		background: none;
+		border: none;
+
+		&:not([data-fancybox]) {
+			cursor: default;
+		}
+
+		@include mouse {
+
+			&[data-fancybox]:hover {
+
+				.small-specials__item-img {
+					filter: brightness(1);
+				}
+
+				.small-specials__item-more {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	&__item-img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 4/3;
+		object-fit: cover;
+		filter: brightness(0.7);
+		transition: var(--transition);
+	}
+
+	&__item-title {
+		font-weight: 700;
+		font-size: 20px;
+		text-align: left;
+
+		@include lg {
+			font-size: 18px;
+		}
+
+		@include xs {
+			font-size: 16px;
+		}
+	}
+
+	&__item-more {
+		margin-top: auto;
+		color: var(--primary);
+	}
+
+	&__modal {
+		position: relative;
+		flex-direction: column;
+		gap: 15px;
+		align-items: flex-start;
+		max-width: 750px;
+		padding: 60px 40px;
+		background: var(--bg-secondary) no-repeat 50% / cover;
+
+		@include xs {
+			padding: 60px 20px 40px;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: var(--bg-secondary);
+			opacity: 0.7;
+			content: "";
+		}
+
+		> * {
+			position: relative;
+			z-index: var(--ui-index-1);
+		}
+	}
+
+	&__modal-label {
+		font-weight: 700;
+		font-size: 24px;
+
+		@include sm {
+			font-size: 20px;
+		}
+	}
+
+	&__modal-link {
+		margin-top: 15px;
+		@include ui-link(var(--primary));
+
+		@include xs {
+			margin-top: 0;
+		}
+	}
+}
