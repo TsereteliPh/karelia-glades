@@ -21,7 +21,7 @@
 
 			<?php
 				$icon_text = get_sub_field( 'icon-text' );
-				if ( $icon_text ) :
+				if ( $icon_text['text'] ) :
 					?>
 						<div class="image-text__icon-text">
 							<?php
