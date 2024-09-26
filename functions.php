@@ -86,7 +86,7 @@ if ( ! function_exists( 'adem_setup' ) ) {
 		'supports' => ['title', 'editor', 'thumbnail'],
 		'taxonomies' => ['services_type'],
 		'has_archive' => false,
-		'rewrite' => false,
+		'rewrite' => true,
 		'query_var' => true,
 		'publicly_queryable' => true
 	] );
@@ -113,7 +113,7 @@ if ( ! function_exists( 'adem_setup' ) ) {
 		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
 		'taxonomies' => ['services_type'],
 		'has_archive' => false,
-		'rewrite' => false,
+		'rewrite' => true,
 		'query_var' => true,
 		'publicly_queryable' => true
 	] );
@@ -138,9 +138,9 @@ if ( ! function_exists( 'adem_setup' ) ) {
 		'menu_position' => 22,
 		'menu_icon' => 'dashicons-tickets-alt',
 		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
-		'taxonomies' => ['services_type'],
+		'taxonomies' => ['specials_type'],
 		'has_archive' => false,
-		'rewrite' => false,
+		'rewrite' => true,
 		'query_var' => true,
 		'publicly_queryable' => true
 	] );
@@ -211,6 +211,42 @@ function adem_block_name( $block ) {
 	];
 
 	return $block_names[$block];
+}
+
+// Custom breadcrumbs yoast
+add_filter( 'wpseo_breadcrumb_links', 'custom_breadcrumbs' );
+
+function custom_breadcrumbs( $links ) {
+	global $post;
+
+	if ( is_singular( 'villas' ) ) {
+		$breadcrumb[] = array(
+			'url' => get_page_link( 429 ),
+			'text' => 'Виллы',
+		);
+
+		array_splice( $links, 1, -2, $breadcrumb );
+	}
+
+	if ( is_singular( 'services' ) ) {
+		$breadcrumb[] = array(
+			'url' => get_page_link( 484 ),
+			'text' => 'Чем заняться',
+		);
+
+		array_splice( $links, 1, -2, $breadcrumb );
+	}
+
+	if ( is_singular( 'special-offers' ) ) {
+		$breadcrumb[] = array(
+			'url' => get_page_link( 383 ),
+			'text' => 'Спецпредложения',
+		);
+
+		array_splice( $links, 1, -2, $breadcrumb );
+	}
+
+	return $links;
 }
 
 // Breadcrumbs indent
