@@ -820,3 +820,43 @@ if (villasCatBtns) {
 		});
 	})
 }
+
+// Логика появления блока Travelline на главной странице
+
+const travelline = document.querySelector('.js-travelline');
+
+if (travelline && window.innerWidth > 768) {
+	setTimeout(() => {
+		travelline.classList.add('active');
+	}, 500);
+
+	let lastScrollTop = 0;
+	let debounceTimer;
+
+	function debounce(func, delay) {
+		return function() {
+			const context = this;
+			const args = arguments;
+
+			clearTimeout(debounceTimer);
+
+			debounceTimer = setTimeout(() => {
+				func.apply(context, args);
+			}, delay);
+		};
+	}
+
+	function handleScroll() {
+		let scrollTop = window.scrollY;
+
+		if (scrollTop > lastScrollTop) {
+			travelline.classList.remove('active');
+		} else  {
+			travelline.classList.add('active');
+		}
+
+		lastScrollTop = scrollTop;
+	}
+
+	window.addEventListener('scroll', debounce(handleScroll, 50));
+}

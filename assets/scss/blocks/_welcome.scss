@@ -1,7 +1,7 @@
 .welcome {
 	position: relative;
-	z-index: var(--ui-index-1);
-	height: 100vh;
+	z-index: var(--ui-index-3);
+	min-height: 100vh;
 	overflow: hidden;
 	color: var(--fc-light);
 
@@ -98,7 +98,7 @@
 		z-index: var(--ui-index-1);
 		display: flex;
 		flex-direction: column;
-		height: 100%;
+		min-height: 100vh;
 		padding: 3.5vw 0 calc(6vw + 60px);
 		pointer-events: none;
 
@@ -106,8 +106,18 @@
 			padding: 40px 0 100px;
 		}
 
+		@include sm {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			gap: 30px 40px;
+			padding: 160px 0 100px;
+		}
+
 		@include xs {
-			gap: 60px;
+			grid-template-columns: 1fr;
+			gap: 20px;
+			align-content: center;
+			min-height: 100svh;
 			padding: 120px 0;
 		}
 	}
@@ -143,15 +153,16 @@
 		}
 
 		@include sm {
+			position: static;
+			max-width: none;
+			height: fit-content;
 			margin-left: 0;
+			transform: none;
 		}
 
 		@include xs {
-			position: static;
-			max-width: none;
 			font-size: 32px;
-			text-indent: 30px;
-			transform: none;
+			text-indent: 0;
 		}
 	}
 
@@ -193,12 +204,19 @@
 			left: auto;
 		}
 
-		@include xs {
+		@include sm {
 			position: relative;
+			top: auto;
+			right: auto;
+			left: auto;
+			margin: 0 auto;
+			padding-left: 0;
+			transform: none;
+		}
+
+		@include xs {
 			order: 1;
 			width: 130px;
-			margin: 0 auto;
-			transform: none;
 		}
 
 		&::before {
@@ -220,6 +238,34 @@
 		}
 	}
 
+	&__travelline {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: fit-content;
+		background: rgba(255, 255, 255, 0.6);
+		border: 2px solid rgba(255, 255, 255, 1);
+		transform: translateY(100%);
+		backdrop-filter: blur(4px);
+		transition: var(--transition);
+		pointer-events: all;
+
+		@include sm {
+			position: static;
+			grid-column: span 2;
+			transform: none;
+		}
+
+		@include xs {
+			grid-column: auto;
+		}
+
+		&.active {
+			transform: translateY(0);
+		}
+	}
+
 	&__text {
 		max-width: 530px;
 		margin: auto 60px 0 auto;
@@ -234,11 +280,14 @@
 		}
 
 		@include sm {
+			grid-column: span 2;
 			max-width: none;
+			margin: 0;
 		}
 
 		@include xs {
-			margin-top: 20px;
+			grid-column: auto;
+			order: 2;
 		}
 	}
 }

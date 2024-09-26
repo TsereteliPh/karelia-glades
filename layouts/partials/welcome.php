@@ -34,6 +34,21 @@
 						</a>
 					<?php endif; ?>
 
+					<?php
+						$blocks = get_field( 'blocks' );
+						if ( ! findBookLayout( $blocks ) ) :
+							?>
+
+							<div id="block-search-main" class="welcome__travelline js-travelline">
+								<div id="tl-search-form" class="tl-container">
+									<noindex><a href="https://www.travelline.ru/products/tl-hotel/" rel="nofollow" target="_blank">TravelLine</a></noindex>
+								</div>
+							</div>
+
+							<?php
+						endif;
+					?>
+
 					<?php if ( $welcome['text'] ) : ?>
 						<div class="welcome__text"><?php echo $welcome['text']; ?></div>
 					<?php endif; ?>

@@ -235,37 +235,51 @@ function adem_breadcrumbs_indent() {
 	<?php
 }
 
-//TravelLine booking script
+// Find book layout
+function findBookLayout( $array ) {
+    foreach ( $array as $item ) {
+        if ( is_array( $item ) && isset( $item['acf_fc_layout'] ) && $item['acf_fc_layout'] === 'book' ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+// TravelLine booking script
 add_action('wp_head', 'adem_travelline_script');
 function adem_travelline_script() {
 	?>
-		<script type='text/javascript'>
-			(function(w) {
-				var q = [
-					['setContext', 'TL-INT-dacha-rezort_2024-03-20', 'ru'],
-					['embed', 'search-form', {
-						container: 'tl-search-form'
-					}],
-				];
-				var h=["ru-ibe.tlintegration.ru","ibe.tlintegration.ru","ibe.tlintegration.com"];
-				var t = w.travelline = (w.travelline || {}),
+	<link rel="stylesheet" href="/wp-content/themes/KG/travelline-style.css">
+	<script type='text/javascript'>
+		(function(w) {
+			var q = [
+				["setContext", "TL-INT-adem411-ru_2024-08-27", "ru"],
+				["embed", "search-form", {
+					container: "tl-search-form"
+				}],
+				["embed", "search-form", {
+					container: "tl-search-form-mobile"
+				}]
+			];
+			var h = ["ru-ibe.tlintegration.ru", "ibe.tlintegration.ru", "ibe.tlintegration.com"];
+			var t = w.travelline = (w.travelline || {}),
 				ti = t.integration = (t.integration || {});
-				ti.__cq = ti.__cq? ti.__cq.concat(q) : q;
-				if (!ti.__loader) {
-					ti.__loader = true;
-					var d=w.document,c=d.getElementsByTagName("head")[0]||d.getElementsByTagName("body")[0];
-					function e(s,f) {return function() {w.TL||(c.removeChild(s),f())}}
-					(function l(h) {
-						if (0===h.length) return; var s=d.createElement("script");
-						s.type="text/javascript";s.async=!0;s.src="https://"+h[0]+"/integration/loader.js";
-						s.onerror=s.onload=e(s,function(){l(h.slice(1,h.length))});c.appendChild(s)
-					})(h);
-				}
-			})(window);
-		</script>
+			ti.__cq = ti.__cq? ti.__cq.concat(q) : q;
+			if (!ti.__loader) {
+				ti.__loader = true;
+				var d=w.document,c=d.getElementsByTagName("head")[0]||d.getElementsByTagName("body")[0];
+				function e(s,f) {return function() {w.TL||(c.removeChild(s),f())}}
+				(function l(h) {
+					if (0===h.length) return; var s=d.createElement("script");
+					s.type="text/javascript";s.async=!0;s.src="https://"+h[0]+"/integration/loader.js";
+					s.onerror=s.onload=e(s,function(){l(h.slice(1,h.length))});c.appendChild(s)
+				})(h);
+			}
+		})(window);
+	</script>
 	<?php
 }
-
 
 require 'inc/acf.php';
 require 'inc/load-cat.php';
