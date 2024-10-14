@@ -30,6 +30,13 @@
 				<svg width="85" height="127"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
 			</a>
 
+			<?php wp_nav_menu( array(
+				'theme_location' => 'menu_main',
+				'container' => '',
+				'menu_id' => 'extra-menu',
+				'menu_class' => 'reset-list header__extra-menu'
+			) ); ?>
+
 			<div class="header__link-wrapper">
 				Мы находимся
 

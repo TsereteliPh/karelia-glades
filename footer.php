@@ -1,19 +1,12 @@
 </main>
 
-<?php
-	$text = get_field( 'footer', 'options' );
-	$socials = get_field( 'socials', 'options' );
-?>
+<?php $socials = get_field( 'socials', 'options' ); ?>
 <footer class="footer">
 	<div class="container footer__container">
 		<div class="footer__content">
 			<a href="<?php echo bloginfo( 'url' ); ?>" class="footer__logo">
-				<svg width="55" height="29"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo-secondary--text"></use></svg>
+				<svg width="85" height="127"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo"></use></svg>
 			</a>
-
-			<?php if ( $text ) : ?>
-				<div class="footer__text"><?php echo $text; ?></div>
-			<?php endif; ?>
 
 			<?php if ( $socials ) : ?>
 				<div class="socials footer__socials">

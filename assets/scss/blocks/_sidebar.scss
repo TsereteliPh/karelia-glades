@@ -24,7 +24,7 @@
 	&::before {
 		position: absolute;
 		top: 50%;
-		right: -30px;
+		right: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -37,14 +37,23 @@
 		writing-mode: vertical-rl;
 		background: #141414;
 		transform: translateY(-50%) rotate(180deg);
-		visibility: visible;
-		opacity: 1;
+		visibility: hidden;
+		opacity: 0;
 		transition: all 0.5s ease-out;
 		content: "Меню";
 		clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
 
 		@include lg {
 			height: 100px;
+		}
+	}
+
+	&.scroll {
+
+		&::before {
+			right: -30px;
+			visibility: visible;
+			opacity: 1;
 		}
 	}
 

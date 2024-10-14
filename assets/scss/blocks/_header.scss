@@ -56,14 +56,20 @@
 	}
 
 	&__panel {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 20px;
+		display: grid;
+		grid-template-columns: auto 2fr 1fr 1fr;
+		gap: 10px 30px;
 		align-items: center;
-		justify-content: space-between;
+		justify-items: end;
+
+		@include md {
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 
 	&__logo {
+		grid-row: span 2;
 
 		svg {
 
@@ -82,11 +88,69 @@
 		}
 	}
 
+	&__extra-menu {
+		display: flex;
+		grid-column: span 3;
+		gap: 10px;
+		align-items: center;
+		justify-content: space-between;
+		width: 95%;
+
+		@include md {
+			display: none;
+		}
+
+		.menu-item {
+			color: var(--fc-light-gray);
+			font-weight: 400;
+			cursor: pointer;
+			transition: var(--transition);
+
+			@include mouse {
+
+				&:hover {
+					color: var(--fc-light);
+				}
+			}
+
+			a {
+				text-align: center;
+				text-transform: uppercase;
+				text-decoration: none;
+
+				@include lg {
+					font-size: 14px;
+				}
+			}
+		}
+
+		.current-menu-item {
+			position: relative;
+			color: var(--fc-light);
+			cursor: default;
+
+			&::before {
+				position: absolute;
+				bottom: -4px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: var(--fc-light);
+				content: "";
+
+				@include lg {
+					bottom: -2px;
+					height: 1px;
+				}
+			}
+		}
+	}
 
 	&__link-wrapper {
 		display: flex;
 		gap: 5px;
 		align-items: center;
+		justify-self: center;
 		font-weight: 400;
 		font-size: 20px;
 		font-family: var(--font-secondary);

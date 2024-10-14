@@ -63,14 +63,6 @@
 		}
 	}
 
-	&__text {
-		font-size: 14px;
-
-		@include sm {
-			text-align: justify;
-		}
-	}
-
 	&__socials {
 		margin-top: 35px;
 

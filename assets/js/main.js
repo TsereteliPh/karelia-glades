@@ -58,14 +58,15 @@ function accordion() {
 	});
 }
 
-function setHeaderScrollClass() {
-	const header = document.querySelector(".header");
+function setSidebarScrollClass() {
+	const header = document.querySelector('.header');
+	const sidebar = document.querySelector('.sidebar');
 
-	window.addEventListener("scroll", function () {
+	window.addEventListener('scroll', function () {
 		if (window.scrollY >= header.offsetHeight) {
-			header.classList.add("scroll");
+			sidebar.classList.add('scroll');
 		} else {
-			header.classList.remove("scroll");
+			sidebar.classList.remove('scroll');
 		}
 	});
 }
@@ -255,7 +256,7 @@ function showMorePosts() {
 document.addEventListener("DOMContentLoaded", function () {
 	accordion();
 
-	setHeaderScrollClass();
+	setSidebarScrollClass();
 
 	setFileName();
 

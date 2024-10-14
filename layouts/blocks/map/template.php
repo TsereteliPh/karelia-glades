@@ -3,37 +3,40 @@
 	$tel = get_field( 'tel', 'options' );
 	$address = get_field( 'address', 'options' );
 	$office = get_field( 'office', 'options' );
+	$content = false; // ! for temporarily hiding element
 
 	if ( $map ) :
 		?>
 			<section class="map">
 				<div class="map__holder" id="map"></div>
 
-				<div class="container map__container">
-					<div class="map__content">
-						<svg class="map__logo" width="100" height="125"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo-secondary"></use></svg>
+				<?php if ( $content ) : ?>
+					<div class="container map__container">
+						<div class="map__content">
+							<svg class="map__logo" width="100" height="125"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-logo-secondary"></use></svg>
 
-						<div class="map__info">
-							<div class="map__label">Офис</div>
+							<div class="map__info">
+								<div class="map__label">Офис</div>
 
-							<?php if ( $address['address'] ) : ?>
-								<address><?php echo $address['address']; ?></address>
-							<?php endif; ?>
+								<?php if ( $address['address'] ) : ?>
+									<address><?php echo $address['address']; ?></address>
+								<?php endif; ?>
 
-							<?php if ( $tel ) : ?>
-								<a href="tel:<?php echo preg_replace( '/[^0-9,+]/', '', $tel ); ?>" class="map__phone"><?php echo $tel; ?></a>
-							<?php endif; ?>
+								<?php if ( $tel ) : ?>
+									<a href="tel:<?php echo preg_replace( '/[^0-9,+]/', '', $tel ); ?>" class="map__phone"><?php echo $tel; ?></a>
+								<?php endif; ?>
+							</div>
+
+							<?php
+								if ( $office ) {
+									echo wp_get_attachment_image( $office, 'medium', false, array(
+										'class' => 'map__img'
+									) );
+								}
+							?>
 						</div>
-
-						<?php
-							if ( $office ) {
-								echo wp_get_attachment_image( $office, 'medium', false, array(
-									'class' => 'map__img'
-								) );
-							}
-						?>
 					</div>
-				</div>
+				<?php endif; ?>
 
 				<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 				<script>
