@@ -276,7 +276,11 @@
 	}
 
 	&__book {
+		color: var(--primary);
 		font-weight: 700;
-		@include ui-link(var(--primary));
+
+		&[href] {
+			@include ui-link(var(--primary));
+		}
 	}
 }

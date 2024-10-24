@@ -26,6 +26,28 @@ acf_add_local_field_group(array(
 			'acfe_field_group_condition' => 0,
 		),
 		array(
+			'key' => 'field_671a1f8c88f3e',
+			'label' => 'Скоро в продаже',
+			'name' => 'coming_soon',
+			'aria-label' => '',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+			'ui' => 1,
+			'acfe_field_group_condition' => 0,
+			'style' => '',
+		),
+		array(
 			'key' => 'field_662a50d943a3f',
 			'label' => 'Галерея фото',
 			'name' => 'gallery',
@@ -124,7 +146,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1714393694,
+	'modified' => 1729765297,
 ));
 
 endif;

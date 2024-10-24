@@ -50,7 +50,8 @@
 		<div class="villa-card__links">
 			<a href="<?php the_permalink(); ?>" class="villa-card__link">Подробнее</a>
 
-			<a href="#book" class="villa-card__book">Забронировать</a>
+			<?php $coming_soon = get_field( 'coming_soon' ); ?>
+			<a <?php echo ! $coming_soon ? 'href="#book"' : ''; ?> class="villa-card__book"><?php echo $coming_soon ? 'Скоро в продаже' : 'Забронировать'; ?></a>
 		</div>
 	</div>
 </li>
