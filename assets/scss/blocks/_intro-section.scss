@@ -1,7 +1,7 @@
 .intro-section {
 	display: flex;
 	flex-direction: column;
-	gap: 80px;
+	gap: 50px;
 	padding-top: 60px;
 
 	@include md {
@@ -9,7 +9,7 @@
 	}
 
 	@include xs {
-		gap: 30px;
+		gap: 20px;
 	}
 
 	&--dark {
@@ -49,15 +49,15 @@
 	}
 
 	h1.intro-section__title {
-		font-size: clamp(2.25rem, 1.385rem + 3.846vw, 6rem);
+		font-size: clamp(1.75rem, 1.433rem + 1.41vw, 3.125rem);
 	}
 
 	h2.intro-section__title {
-		font-size: clamp(2rem, 1.308rem + 3.077vw, 5rem);
+		font-size: clamp(1.5rem, 1.212rem + 1.282vw, 2.75rem);
 	}
 
 	h3.intro-section__title {
-		font-size: clamp(1.5rem, 0.865rem + 2.821vw, 4.25rem);
+		font-size: clamp(1.125rem, 0.837rem + 1.282vw, 2.375rem);
 	}
 
 	&__title {
@@ -177,14 +177,14 @@
 		}
 
 		&--no-logo {
-			min-height: 220px;
+			min-height: 160px;
 
 			@include md {
-				min-height: 180px;
+				min-height: 120px;
 			}
 
 			@include sm {
-				min-height: 130px;
+				min-height: 100px;
 			}
 
 			&::before {
@@ -205,19 +205,19 @@
 		position: relative;
 		z-index: var(--ui-index-1);
 		max-width: 1000px;
-		font-size: 40px;
+		font-size: 30px;
 		font-family: var(--font-secondary);
 		line-height: 1.2;
 		text-indent: 60px;
 
 		@include hg {
 			max-width: 800px;
-			font-size: 32px;
+			font-size: 26px;
 		}
 
 		@include md {
 			max-width: 600px;
-			font-size: 24px;
+			font-size: 22px;
 		}
 
 		@include sm {
@@ -226,7 +226,7 @@
 
 		@include xs {
 			max-width: 450px;
-			font-size: 20px;
+			font-size: 18px;
 			text-align: center;
 			text-indent: 0;
 		}

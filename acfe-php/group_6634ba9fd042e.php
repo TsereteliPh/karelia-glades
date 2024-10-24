@@ -314,6 +314,29 @@ acf_add_local_field_group(array(
 					'acfe_group_modal_size' => 'large',
 					'parent_repeater' => 'field_6634ba9fdfc15',
 				),
+				array(
+					'key' => 'field_671a255848e6c',
+					'label' => 'Добавить ссылку на услугу?',
+					'name' => 'link',
+					'aria-label' => '',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 0,
+					'ui_on_text' => '',
+					'ui_off_text' => '',
+					'ui' => 1,
+					'acfe_field_group_condition' => 0,
+					'style' => '',
+					'parent_repeater' => 'field_6634ba9fdfc15',
+				),
 			),
 		),
 	),
@@ -342,7 +365,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1714732425,
+	'modified' => 1729766777,
 ));
 
 endif;

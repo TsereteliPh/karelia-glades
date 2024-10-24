@@ -62,7 +62,9 @@
 									<div class="services__item-dropdown">
 										<div class="services__item-desc"><?php echo $item['desc']; ?></div>
 
-										<a href="<?php the_permalink(); ?>" class="btn-light services__item-link">Узнать больше</a>
+										<?php if ( $item['link'] ) : ?>
+											<a href="<?php the_permalink(); ?>" class="btn-light services__item-link">Узнать больше</a>
+										<?php endif; ?>
 									</div>
 
 									<button class="services__item-more" type="button">
@@ -70,7 +72,9 @@
 										<span class="services__item-more-arrow"></span>
 									</button>
 								<?php else : ?>
-									<a href="<?php the_permalink(); ?>" class="btn-light services__item-link">Узнать больше</a>
+									<?php if ( $item['link'] ) : ?>
+										<a href="<?php the_permalink(); ?>" class="btn-light services__item-link">Узнать больше</a>
+									<?php endif; ?>
 								<?php endif; ?>
 							</div>
 						</li>
