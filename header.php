@@ -80,14 +80,6 @@
 				'menu_class' => 'reset-list header__menu'
 			) ); ?>
 
-			<address class="header__address">
-				<?php if ( $address['city'] ) : ?>
-					<span><?php echo $address['city']; ?></span>
-				<?php endif; ?>
-
-				<?php if ( $address['address'] ) echo $address['address']; ?>
-			</address>
-
 			<?php if ( $socials ) : ?>
 				<div class="socials header__socials">
 					<?php foreach ( $socials as $item ) : ?>
@@ -121,14 +113,6 @@
 			'menu_id' => 'menu-main',
 			'menu_class' => 'reset-list sidebar__menu'
 		) ); ?>
-
-		<address class="sidebar__address">
-			<?php if ( $address['city'] ) : ?>
-				<span><?php echo $address['city']; ?></span>
-			<?php endif; ?>
-
-			<?php if ( $address['address'] ) echo $address['address']; ?>
-		</address>
 
 		<?php if ( $socials ) : ?>
 			<div class="socials sidebar__socials">
