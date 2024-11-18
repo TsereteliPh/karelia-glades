@@ -115,3 +115,19 @@
 		}
 	}
 }
+
+.btn-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: var(--fc-light);
+	background: none;
+	border: none;
+	transform: translate(-40%, -50%);
+	transition: var(--transition);
+
+	svg {
+		width: 40px;
+		height: auto;
+	}
+}

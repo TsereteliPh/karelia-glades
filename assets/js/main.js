@@ -311,17 +311,17 @@ if (welcomeCarousel) {
 	});
 }
 
-const aboutCarousel = document.querySelector('.about__slider');
+const universalCarousel = document.querySelector('.universal-block__slider');
 
-if (aboutCarousel) {
-	let aboutSwiper = new Swiper(aboutCarousel, {
-		slidesPerView: 'auto',
+if (universalCarousel) {
+	let universalSwiper = new Swiper(universalCarousel, {
+		slidesPerView: 1,
 		spaceBetween: 20,
 		autoplay: {
 			delay: 4000,
 		},
 		pagination: {
-			el: '.about__slider-pagination',
+			el: '.universal-block__pagination',
 			bulletClass: 'pagination__bullet',
 			bulletActiveClass: 'active'
 		},

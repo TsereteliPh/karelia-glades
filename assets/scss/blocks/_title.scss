@@ -6,10 +6,13 @@
 	font-size: clamp(1.25rem, 1.077rem + 0.769vw, 2rem);
 	font-family: var(--font-secondary);
 	text-transform: uppercase;
-	counter-increment: title-counter 1;
 
 	@include md {
 		padding: 5px 0 5px 50px;
+	}
+
+	&:not(.title--ellipse):not(.title--default) {
+		counter-increment: title-counter 1;
 	}
 
 	&::before {

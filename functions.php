@@ -179,7 +179,6 @@ function adem_excerpt( $limit, $ID = null ) {
 // block name
 function adem_block_name( $block ) {
 	$block_names = [
-		'about' => 'О курорте',
 		'advantages' => 'Преимущества',
 		'book' => 'Забронировать',
 		'contacts' => 'Контакты',
@@ -202,6 +201,7 @@ function adem_block_name( $block ) {
 		'services' => 'Услуги',
 		'special-offers-slider' => 'Спецпредложения',
 		'special-offers' => 'Спецпредложения',
+		'universal-block' => 'Информация',
 		'useful-links' => 'Полезные ссылки',
 		'villas-slider' => 'Виллы',
 		'villas' => 'Виллы'

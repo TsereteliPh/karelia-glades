@@ -1,4 +1,4 @@
-.about {
+.universal-block {
 	position: relative;
 	padding: 120px 0 180px;
 	overflow: hidden;
@@ -34,7 +34,7 @@
 		pointer-events: all;
 
 		@include hg {
-			min-height: 450px;
+			min-height: 540px;
 		}
 
 		@include md {
@@ -44,7 +44,8 @@
 		}
 	}
 
-	&__text {
+	&__text,
+	&__advantages-text {
 		line-height: 1.2;
 	}
 
@@ -96,12 +97,12 @@
 		object-fit: contain;
 	}
 
-	&__advantages-text {
+	&__advantages-small-text {
 		font-weight: 400;
 		line-height: 1.2;
 	}
 
-	&__slider {
+	&__media {
 		position: absolute;
 		top: 120px;
 		left: calc(50% - 635px);
@@ -132,10 +133,6 @@
 	&__slider-item {
 		display: flex;
 
-		@include xs {
-			max-width: 70%;
-		}
-
 		img {
 			width: 40%;
 			height: 100%;
@@ -147,5 +144,54 @@
 				aspect-ratio: 6/7;
 			}
 		}
+	}
+
+	&__video-link {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 40%;
+		height: 100%;
+		overflow: hidden;
+
+		@include md {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 16/9;
+		}
+
+		@include xs {
+			aspect-ratio: 6/7;
+		}
+
+		@include mouse {
+
+			&:hover {
+
+				.btn-play {
+					transform: translate(-40%, -50%) scale(1.1);
+				}
+			}
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(#141414, 0.6);
+			content: "";
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__video-btn {
+		z-index: var(--ui-index-1);
 	}
 }
