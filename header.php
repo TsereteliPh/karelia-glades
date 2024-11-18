@@ -17,10 +17,6 @@
 	$address = get_field( 'address', 'options' );
 	$socials = get_field( 'socials', 'options' );
 	$map_link = get_field( 'map_link', 'options' );
-
-	if ( ! $map_link && is_front_page() ) $map_link = '#map';
-	if ( ! $map_link && ! is_front_page() ) $map_link = get_home_url() . '#map';
-
 ?>
 
 <header class="header<?php echo is_front_page() ? ' header--index' : ''; ?>">
@@ -37,15 +33,9 @@
 				'menu_class' => 'reset-list header__extra-menu'
 			) ); ?>
 
-			<div class="header__link-wrapper">
+			<div class="header__link">
 				Мы находимся
-
-				<a href="<?php echo $map_link; ?>" class="header__link">
-					тут
-					<span></span>
-				</a>
-
-				71 км от СПБ
+				<a href="<?php echo $map_link; ?>" target="_blank">тут 71 км от СПБ</a>
 			</div>
 
 			<?php if ( $tel ) : ?>

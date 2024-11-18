@@ -146,10 +146,7 @@
 		}
 	}
 
-	&__link-wrapper {
-		display: flex;
-		gap: 5px;
-		align-items: center;
+	&__link {
 		justify-self: center;
 		font-weight: 400;
 		font-size: 20px;
@@ -161,27 +158,6 @@
 
 		@include sm {
 			display: none;
-		}
-	}
-
-	&__link {
-		display: flex;
-		gap: 5px;
-		align-items: center;
-
-		@include sm {
-			display: none;
-		}
-
-		span {
-			position: relative;
-			display: inline-block;
-			width: 80px;
-			height: 40px;
-			background:
-				url(assets/images/icon-route--fill.svg) no-repeat 80% 50% / 15px auto,
-				url(assets/images/welcome-link-bg.jpg) no-repeat 50% / cover;
-			border-radius: 25px;
 		}
 	}
 

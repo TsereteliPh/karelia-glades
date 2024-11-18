@@ -206,6 +206,27 @@ acf_add_local_field_group(array(
 			'library' => 'all',
 		),
 		array(
+			'key' => 'field_673b3fba4f7cf',
+			'label' => 'Ссылка на Яндекс Навигатор',
+			'name' => 'map_link',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'acfe_field_group_condition' => 0,
+		),
+		array(
 			'key' => 'field_65e051fe1baf6',
 			'label' => 'Карта',
 			'name' => 'map',
@@ -224,23 +245,6 @@ acf_add_local_field_group(array(
 			'zoom' => 10,
 			'center_lat' => '60.378929197462064',
 			'center_lng' => '29.15217423443598',
-			'acfe_field_group_condition' => 0,
-		),
-		array(
-			'key' => 'field_65fafb80ace7c',
-			'label' => 'Ссылка на карту в шапке сайта',
-			'name' => 'map_link',
-			'aria-label' => '',
-			'type' => 'link',
-			'instructions' => 'Не заполнять это поле, если на главной странице есть блок с картой',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'return_format' => 'url',
 			'acfe_field_group_condition' => 0,
 		),
 		array(
@@ -291,7 +295,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1727105307,
+	'modified' => 1731936234,
 ));
 
 endif;

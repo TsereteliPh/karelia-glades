@@ -1,5 +1,6 @@
 <?php
 	$map = get_field( 'map', 'options' );
+	$map_link = get_field( 'map_link', 'options' );
 	$tel = get_field( 'tel', 'options' );
 	$address = get_field( 'address', 'options' );
 	$office = get_field( 'office', 'options' );
@@ -50,9 +51,7 @@
 
 							<?php foreach ( $map['marks'] as $mark ) : ?>
 								map.geoObjects.add(
-									new ymaps.Placemark([<?php echo $mark['coords'][0]; ?>, <?php echo $mark['coords'][1]; ?>], {
-											balloonContent: '<?php echo $mark['content']; ?>'
-										},
+									new ymaps.Placemark([<?php echo $mark['coords'][0]; ?>, <?php echo $mark['coords'][1]; ?>], { },
 										{
 											iconLayout: 'default#image',
 											iconImageHref: '<?php echo get_template_directory_uri(); ?>/assets/images/icon-marker.svg',
@@ -60,6 +59,12 @@
 											iconImageOffset: [-30, -69]
 										})
 								);
+
+								map.geoObjects.each(function (geoObj) {
+									geoObj.events.add('click', function () {
+										window.open('<?php echo $map_link; ?>', '_blank');
+									});
+								})
 							<?php endforeach; ?>
 
 							map.controls.remove('geolocationControl'); // удаляем геолокацию
