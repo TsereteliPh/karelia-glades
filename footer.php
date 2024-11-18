@@ -26,6 +26,63 @@
 			'menu_class' => 'reset-list footer__menu'
 		) ); ?>
 
+		<div class="footer__contacts">
+			<?php
+				$contacts = get_field( 'footer_contacts', 'options' );
+				$tel_callback = function ( $tel ) {
+					return '<a href="tel:' . preg_replace( '/[^0-9,+]/', '',  $tel) . '">' . $tel . '</a>';
+				}
+			?>
+			<div class="footer__contacts-title">Контакты:</div>
+
+			<div class="footer__contacts-content">
+				<?php if ( $contacts['admin'] ) : ?>
+					<div class="footer__contacts-wrapper">
+						Администратор курорта:
+
+						<?php
+							foreach ( $contacts['admin'] as $key => $contact ) {
+								echo '<a href="tel:' . preg_replace( '/[^0-9,+]/', '',  $contact['tel']) . '">' . $contact['tel'] . '</a>';
+								echo ( $key + 1 < count( $contacts['admin'] ) ) ? ', ' : '';
+							}
+						?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( $contacts['departments'] ) : ?>
+					<div class="footer__contacts-wrapper">
+						Отдел продаж и маркетинга:
+
+						<?php
+							foreach ( $contacts['departments'] as $key => $department ) {
+								echo '<a href="tel:' . preg_replace( '/[^0-9,+]/', '',  $department['tel']) . '">' . $department['tel'] . '</a>';
+								echo ( $key + 1 < count( $contacts['departments'] ) ) ? ', ' : '';
+							}
+						?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( $contacts['email'] ) : ?>
+					<div class="footer__contacts-wrapper">
+						Электронная почта:
+
+						<?php
+							foreach ( $contacts['email'] as $key => $email ) {
+								echo '<a href="mailto:' . preg_replace( '/[^0-9,+]/', '',  $email['email']) . '">' . $email['email'] . '</a>';
+								echo ( $key + 1 < count( $contacts['email'] ) ) ? ', ' : '';
+							}
+						?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( $contacts['address'] ) : ?>
+					<address class="footer__contacts-wrapper">
+						Адрес: <?php echo $contacts['address']; ?>
+					</address>
+				<?php endif; ?>
+			</div>
+		</div>
+
 		<div class="footer__links">
 			<a href="#<?php //todo: requisites ?>" class="footer__requisites">Наши реквизиты</a>
 

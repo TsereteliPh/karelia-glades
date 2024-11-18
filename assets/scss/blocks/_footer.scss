@@ -21,18 +21,27 @@
 
 	&__container {
 		display: grid;
-		grid-template-columns: 250px 1fr;
+		grid-template-columns: 250px 1fr 2fr;
 		gap: 70px 50px;
 
 		@include hg {
 			gap: 50px;
 		}
 
+		@include md {
+			grid-template-columns: 1fr 1fr 2fr;
+		}
+
 		@include sm {
+			grid-template-columns: 1fr auto;
+			gap: 20px 40px;
+		}
+
+		@include xs {
 			display: flex;
 			flex-direction: column;
-			gap: 40px;
-			align-items: center;
+			gap: 20px;
+			text-align: center;
 		}
 	}
 
@@ -42,16 +51,26 @@
 		gap: 15px;
 
 		@include sm {
+			grid-row: span 2;
+			grid-column: 2/3;
 			gap: 20px;
+		}
+
+		@include xs {
+			align-items: center;
 		}
 	}
 
 	&__logo {
 		display: block;
+		width: fit-content;
 
 		@include sm {
-			order: 1;
-			margin: 30px auto 0;
+			margin-left: auto;
+		}
+
+		@include xs {
+			margin-left: 0;
 		}
 
 		svg {
@@ -59,6 +78,7 @@
 			@include sm {
 				width: 110px;
 				height: auto;
+				color: var(--fc-light-gray);
 			}
 		}
 	}
@@ -71,8 +91,7 @@
 		}
 
 		@include sm {
-			gap: 45px;
-			margin: 0 auto;
+			margin-top: auto;
 		}
 
 		.socials__item {
@@ -89,21 +108,17 @@
 
 	&__menu {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 20px 165px;
-		align-self: center;
+		grid-template-columns: 1fr;
+		gap: 20px;
 		height: fit-content;
 
-		@include md {
-			gap: 20px 100px;
-		}
-
 		@include sm {
-			order: -1;
+			grid-row: 1/2;
+			grid-column: 1/2;
 		}
 
 		@include xs {
-			gap: 20px 30px;
+			justify-items: center;
 		}
 
 		.menu-item {
@@ -136,16 +151,67 @@
 		}
 	}
 
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		color: var(--fc-light-gray);
+		line-height: 1.2;
+
+		@include sm {
+			gap: 10px;
+		}
+
+		@include xs {
+			align-items: center;
+		}
+	}
+
+	&__contacts-title {
+		font-weight: 400;
+		font-size: 14px;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	&__contacts-content {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		@include xs {
+			align-items: center;
+		}
+	}
+
+	&__contacts-wrapper {
+
+		a {
+			display: inline-block;
+			color: var(--fc-light);
+			transition: var(--transition);
+
+			@include mouse {
+
+				&:hover {
+					color: var(--primary);
+				}
+			}
+		}
+	}
+
 	&__links {
 		display: flex;
-		grid-column: span 2;
+		grid-column: span 3;
 		gap: 50px;
 		align-items: center;
 
 		@include sm {
+			grid-column: span 2;
 			gap: 20px;
 			justify-content: space-between;
 			width: 100%;
+			margin-top: 30px;
 		}
 
 		@include xs {
