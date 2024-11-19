@@ -827,37 +827,24 @@ if (villasCatBtns) {
 const travelline = document.querySelector('.js-travelline');
 
 if (travelline && window.innerWidth > 768) {
-	setTimeout(() => {
+	const travellineOpenBtn = document.querySelector('.welcome__travelline-open');
+	const travellineCloseBtn = document.querySelector('.welcome__travelline-close');
+
+	const travellineOpener = () => {
 		travelline.classList.add('active');
+        travellineOpenBtn.classList.remove('active');
+	}
+
+	const travellineCloser = () => {
+		travelline.classList.remove('active');
+        travellineOpenBtn.classList.add('active');
+	}
+
+	travellineOpenBtn.onclick = () => travellineOpener();
+
+	travellineCloseBtn.onclick = () => travellineCloser();
+
+	setTimeout(() => {
+		travellineOpener();
 	}, 500);
-
-	let lastScrollTop = 0;
-	let debounceTimer;
-
-	function debounce(func, delay) {
-		return function() {
-			const context = this;
-			const args = arguments;
-
-			clearTimeout(debounceTimer);
-
-			debounceTimer = setTimeout(() => {
-				func.apply(context, args);
-			}, delay);
-		};
-	}
-
-	function handleScroll() {
-		let scrollTop = window.scrollY;
-
-		if (scrollTop > lastScrollTop) {
-			travelline.classList.remove('active');
-		} else  {
-			travelline.classList.add('active');
-		}
-
-		lastScrollTop = scrollTop;
-	}
-
-	window.addEventListener('scroll', debounce(handleScroll, 50));
 }

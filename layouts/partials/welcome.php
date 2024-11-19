@@ -40,10 +40,14 @@
 							?>
 
 							<div id="block-search-main" class="welcome__travelline js-travelline">
+								<button class="welcome__travelline-close" type="button"></button>
+
 								<div id="tl-search-form" class="tl-container">
 									<noindex><a href="https://www.travelline.ru/products/tl-hotel/" rel="nofollow" target="_blank">TravelLine</a></noindex>
 								</div>
 							</div>
+
+							<button class="welcome__travelline-open" type="button">Забронировать</button>
 
 							<?php
 						endif;
