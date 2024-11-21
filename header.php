@@ -38,6 +38,8 @@
 				<a href="<?php echo $map_link; ?>" target="_blank">тут 71 км от СПБ</a>
 			</div>
 
+			<div class="header__reputation" id='tl-reputation-widget'></div>
+
 			<?php if ( $tel ) : ?>
 				<a href="tel:<?php echo preg_replace( '/[^0-9,+]/', '', $tel ); ?>" class="header__tel">
 					<svg width="22" height="27"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>

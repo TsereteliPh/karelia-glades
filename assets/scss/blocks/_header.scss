@@ -57,14 +57,22 @@
 
 	&__panel {
 		display: grid;
-		grid-template-columns: auto 2fr 1fr 1fr;
+		grid-template-columns: auto 2fr 150px 1fr 1fr;
 		gap: 10px 30px;
 		align-items: center;
 		justify-items: end;
 
+		@include lg {
+			grid-template-columns: auto 1fr 150px 1fr 1fr;
+		}
+
 		@include md {
 			display: flex;
 			justify-content: space-between;
+		}
+
+		@include xs {
+			gap: 10px 15px;
 		}
 	}
 
@@ -90,7 +98,7 @@
 
 	&__extra-menu {
 		display: flex;
-		grid-column: span 3;
+		grid-column: span 4;
 		gap: 10px;
 		align-items: center;
 		justify-content: space-between;
@@ -156,8 +164,26 @@
 			font-size: 16px;
 		}
 
+		@include lg {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0 5px;
+			align-items: center;
+			justify-content: center;
+		}
+
 		@include sm {
 			display: none;
+		}
+	}
+
+	&__reputation {
+		width: 100%;
+		max-width: 150px;
+
+		@include xs {
+			max-width: 120px;
+			overflow: hidden;
 		}
 	}
 
@@ -194,6 +220,10 @@
 			gap: 25px;
 			align-items: center;
 			margin-left: auto;
+		}
+
+		@include xs {
+			gap: 15px;
 		}
 	}
 
