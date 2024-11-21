@@ -35,7 +35,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -44,8 +44,30 @@ acf_add_local_field_group(array(
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 			'ui' => 1,
-			'acfe_field_group_condition' => 0,
 			'style' => '',
+			'acfe_field_group_condition' => 0,
+		),
+		array(
+			'key' => 'field_673f2fc2c4304',
+			'label' => 'Кнопка подробнее',
+			'name' => 'more_link',
+			'aria-label' => '',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+			'ui' => 1,
+			'style' => '',
+			'acfe_field_group_condition' => 0,
 		),
 		array(
 			'key' => 'field_662a50d943a3f',
@@ -92,7 +114,7 @@ acf_add_local_field_group(array(
 			),
 			'default_value' => '',
 			'acfe_textarea_code' => 0,
-			'maxlength' => '',
+			'maxlength' => 500,
 			'rows' => 4,
 			'placeholder' => '',
 			'new_lines' => '',
@@ -146,7 +168,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1729765297,
+	'modified' => 1732194653,
 ));
 
 endif;

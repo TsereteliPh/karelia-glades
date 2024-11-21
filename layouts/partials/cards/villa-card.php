@@ -48,7 +48,9 @@
 		<?php endif; ?>
 
 		<div class="villa-card__links">
-			<a href="<?php the_permalink(); ?>" class="villa-card__link">Подробнее</a>
+			<?php if ( get_field( 'more_link' ) ) : ?>
+				<a href="<?php the_permalink(); ?>" class="villa-card__link">Подробнее</a>
+			<?php endif; ?>
 
 			<?php $coming_soon = get_field( 'coming_soon' ); ?>
 			<a <?php echo ! $coming_soon ? 'href="#tl-search-form"' : ''; ?> class="villa-card__book"><?php echo $coming_soon ? 'Скоро в продаже' : 'Забронировать'; ?></a>
