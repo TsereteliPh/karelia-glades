@@ -20,6 +20,7 @@
 			<?php else : ?>
 				<?php
 					$advantages_text = get_sub_field( 'advantages_text' );
+					$advantages_label = get_sub_field( 'advantages_label' );
 					$advantages = get_sub_field( 'advantages' );
 				?>
 
@@ -29,7 +30,9 @@
 
 				<?php if ( $advantages ) : ?>
 					<div class="universal-block__advantages">
-						<div class="universal-block__advantages-title">Преимущества расположения</div>
+						<?php if ( $advantages_label ) : ?>
+							<div class="universal-block__advantages-title"><?php echo $advantages_label; ?></div>
+						<?php endif; ?>
 
 						<ul class="reset-list universal-block__advantages-list">
 							<?php foreach ( $advantages as $advantage ) : ?>

@@ -449,6 +449,27 @@ acf_add_local_field_group(array(
 			'acfe_field_group_condition' => 0,
 		),
 		array(
+			'key' => 'field_673f13a612ada',
+			'label' => 'Заголовок преимуществ',
+			'name' => 'advantages_label',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'acfe_field_group_condition' => 0,
+		),
+		array(
 			'key' => 'field_65e85b89fc66d',
 			'label' => 'Преимущества расположения',
 			'name' => 'advantages',
@@ -560,7 +581,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1731925614,
+	'modified' => 1732187071,
 ));
 
 endif;
