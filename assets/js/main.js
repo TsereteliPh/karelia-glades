@@ -306,7 +306,8 @@ if (welcomeCarousel) {
 		pagination: {
 			el: '.welcome__slider-pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		}
 	});
 }
@@ -323,7 +324,8 @@ if (universalCarousel) {
 		pagination: {
 			el: '.universal-block__pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 		breakpoints: {
 			992: {
@@ -366,7 +368,8 @@ if (fullsizeCarousel) {
 		pagination: {
 			el: '.fullsize-slider__pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 		on: {
 			afterInit: function () {
@@ -391,7 +394,8 @@ if (advantagesCarousel) {
 		pagination: {
 			el: '.advantages__slider-pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 		breakpoints: {
 			992: {
@@ -459,7 +463,8 @@ if (singleServicesCarousel) {
 		pagination: {
 			el: '.single-services__pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 		on: {
 			afterInit: function() {
@@ -488,7 +493,8 @@ if (villasCarousel) {
 		pagination: {
 			el: '.villas-slider__pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 		breakpoints: {
 			1440: {
@@ -514,7 +520,8 @@ const villaCardSwiperInit = function (slider) {
 		pagination: {
 			el: slider.querySelector('.villa-card__gallery-pagination'),
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 	});
 }
@@ -538,7 +545,8 @@ if (servicesCarousel) {
 		pagination: {
 			el: '.services-slider__pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 		breakpoints: {
 			1440: {
@@ -566,7 +574,8 @@ if (specialOffersCarousel) {
 		pagination: {
 			el: '.special-offers-slider__pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 		breakpoints: {
 			1440: {
@@ -636,7 +645,8 @@ if (imageCarousel) {
 		pagination: {
 			el: '.image-slider__pagination',
 			bulletClass: 'pagination__bullet',
-			bulletActiveClass: 'active'
+			bulletActiveClass: 'active',
+			clickable: true,
 		},
 		breakpoints: {
 			992: {
