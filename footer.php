@@ -33,7 +33,6 @@
 					return '<a href="tel:' . preg_replace( '/[^0-9,+]/', '',  $tel) . '">' . $tel . '</a>';
 				}
 			?>
-			<div class="footer__contacts-title">Контакты:</div>
 
 			<div class="footer__contacts-content">
 				<?php if ( $contacts['admin'] ) : ?>

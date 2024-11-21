@@ -152,26 +152,12 @@
 	}
 
 	&__contacts {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
 		color: var(--fc-light-gray);
 		line-height: 1.2;
-
-		@include sm {
-			gap: 10px;
-		}
 
 		@include xs {
 			align-items: center;
 		}
-	}
-
-	&__contacts-title {
-		font-weight: 400;
-		font-size: 14px;
-		text-transform: uppercase;
-		text-decoration: none;
 	}
 
 	&__contacts-content {
