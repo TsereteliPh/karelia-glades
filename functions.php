@@ -179,6 +179,7 @@ function adem_excerpt( $limit, $ID = null ) {
 // block name
 function adem_block_name( $block ) {
 	$block_names = [
+		'activity-slider' => 'Слайдер активностей',
 		'advantages' => 'Преимущества',
 		'book' => 'Забронировать',
 		'contacts' => 'Контакты',
