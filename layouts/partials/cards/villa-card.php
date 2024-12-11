@@ -1,3 +1,4 @@
+<?php $more_link = get_field( 'more_link' ); ?>
 <li class="villa-card <?php echo $args['class']; ?>">
 	<div class="villa-card__gallery swiper">
 		<div class="villa-card__gallery-wrapper swiper-wrapper">
@@ -36,7 +37,9 @@
 
 		<div class="villa-card__label">
 			<span>Вилла</span>
-			<?php the_title(); ?>
+			<a <?php echo $more_link ? 'href="' . the_permalink() . '"' : ''; ?>>
+				<?php the_title(); ?>
+			</a>
 		</div>
 
 		<?php if ( get_field( 'description' ) ) : ?>
@@ -48,7 +51,7 @@
 		<?php endif; ?>
 
 		<div class="villa-card__links">
-			<?php if ( get_field( 'more_link' ) ) : ?>
+			<?php if ( $more_link ) : ?>
 				<a href="<?php the_permalink(); ?>" class="villa-card__link">Подробнее</a>
 			<?php endif; ?>
 

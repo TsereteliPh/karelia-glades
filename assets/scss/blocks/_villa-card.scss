@@ -235,6 +235,14 @@
 				font-weight: 700;
 			}
 		}
+
+		a {
+			text-decoration: none;
+
+			&[href] {
+				@include ui-link(var(--fc-light));
+			}
+		}
 	}
 
 	&__desc,
