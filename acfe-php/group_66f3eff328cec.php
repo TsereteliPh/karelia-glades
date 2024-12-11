@@ -119,7 +119,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => '30',
 						'class' => '',
 						'id' => '',
 					),
@@ -171,6 +171,24 @@ acf_add_local_field_group(array(
 					'acfe_field_group_condition' => 0,
 					'parent_repeater' => 'field_66f3f016dd269',
 				),
+				array(
+					'key' => 'field_67594d39c5042',
+					'label' => 'Ссылка',
+					'name' => 'link',
+					'aria-label' => '',
+					'type' => 'link',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '25',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'acfe_field_group_condition' => 0,
+					'parent_repeater' => 'field_66f3f016dd269',
+				),
 			),
 		),
 	),
@@ -199,7 +217,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1727263036,
+	'modified' => 1733906878,
 ));
 
 endif;

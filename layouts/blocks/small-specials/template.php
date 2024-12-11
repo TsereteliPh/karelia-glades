@@ -18,11 +18,7 @@
 						?>
 
 						<li class="small-specials__item">
-							<button
-								class="small-specials__item-button"
-								type="button"
-								<?php echo $special['text'] ? 'data-fancybox data-src="#special-modal-' . $key .'"' : ''; ?>
-							>
+							<div class="small-specials__item-box">
 								<?php
 									$thumb = get_the_post_thumbnail_url( $post, 'large' );
 
@@ -33,12 +29,22 @@
 									}
 								?>
 
-								<div class="small-specials__item-title"><?php the_title(); ?></div>
+                                <?php if ( $special['link'] ) : ?>
+									<a href="<?php echo $special['link']['url']; ?>" class="small-specials__item-link" target="<?php echo $special['link']['target']; ?>">
+										<?php the_title(); ?>
+									</a>
+								<?php else : ?>
+									<a class="small-specials__item-link">
+										<?php the_title(); ?>
+									</a>
+								<?php endif; ?>
 
 								<?php if ( $special['text'] ) : ?>
-									<div class="small-specials__item-more">Подробнее</div>
+									<button class="small-specials__item-button" type="button" data-fancybox data-src="#special-modal-<?php echo $key; ?>">
+										Подробнее
+									</button>
 								<?php endif; ?>
-							</button>
+							</div>
 
 							<?php if ( $special['text'] ) : ?>
 								<div

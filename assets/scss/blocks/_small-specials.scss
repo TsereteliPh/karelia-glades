@@ -21,12 +21,8 @@
 
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 40px 20px;
-
-		@include md {
-			grid-template-columns: repeat(3, 1fr);
-		}
 
 		@include sm {
 			grid-template-columns: 1fr 1fr;
@@ -47,30 +43,19 @@
 		}
 	}
 
-	&__item-button {
+	&__item-box {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
 		width: 100%;
 		height: 100%;
-		padding: 0;
-		background: none;
-		border: none;
-
-		&:not([data-fancybox]) {
-			cursor: default;
-		}
 
 		@include mouse {
 
-			&[data-fancybox]:hover {
+			&:hover {
 
 				.small-specials__item-img {
 					filter: brightness(1);
-				}
-
-				.small-specials__item-more {
-					text-decoration: underline;
 				}
 			}
 		}
@@ -79,16 +64,24 @@
 	&__item-img {
 		width: 100%;
 		height: auto;
-		aspect-ratio: 4/3;
+		aspect-ratio: 16/9;
 		object-fit: cover;
-		filter: brightness(0.7);
 		transition: var(--transition);
+
+		@include lg {
+			aspect-ratio: 4/3;
+		}
+
+		@include mouse {
+			filter: brightness(0.7);
+		}
 	}
 
-	&__item-title {
+	&__item-link {
 		font-weight: 700;
 		font-size: 20px;
 		text-align: left;
+		text-decoration: none;
 
 		@include lg {
 			font-size: 18px;
@@ -97,11 +90,20 @@
 		@include xs {
 			font-size: 16px;
 		}
+
+		&[href] {
+			@include ui-link(var(--fc-dark));
+		}
 	}
 
-	&__item-more {
+	&__item-button {
+		position: relative;
+		width: fit-content;
 		margin-top: auto;
-		color: var(--primary);
+		padding: 0;
+		background: none;
+		border: none;
+		@include ui-link(var(--primary));
 	}
 
 	&__modal {
