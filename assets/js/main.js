@@ -58,15 +58,17 @@ function accordion() {
 	});
 }
 
-function setSidebarScrollClass() {
+function setSidebarAndHeaderScrollClass() {
 	const header = document.querySelector('.header');
 	const sidebar = document.querySelector('.sidebar');
 
 	window.addEventListener('scroll', function () {
 		if (window.scrollY >= header.offsetHeight) {
 			sidebar.classList.add('scroll');
+			header.classList.add('scroll');
 		} else {
 			sidebar.classList.remove('scroll');
+			header.classList.remove('scroll');
 		}
 	});
 }
@@ -256,7 +258,7 @@ function showMorePosts() {
 document.addEventListener("DOMContentLoaded", function () {
 	accordion();
 
-	setSidebarScrollClass();
+	setSidebarAndHeaderScrollClass();
 
 	setFileName();
 

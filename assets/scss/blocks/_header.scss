@@ -55,15 +55,43 @@
 		}
 	}
 
+	&.scroll {
+		position: fixed;
+		padding: 10px 0;
+		background: url(assets/images/header-bg.jpg) no-repeat 50% bottom / cover;
+		animation: header-show 0.3s ease-in;
+
+		@include sm {
+			background: #141414;
+		}
+
+		&::before {
+			display: block;
+		}
+
+		.header__logo {
+
+			svg {
+				width: 50px;
+				height: auto;
+
+				@include xs {
+					width: 35px;
+				}
+			}
+		}
+	}
+
 	&__panel {
 		display: grid;
-		grid-template-columns: auto 2fr 150px 1fr 1fr;
+		grid-template-columns: auto 2fr 150px 1fr auto;
 		gap: 10px 30px;
 		align-items: center;
 		justify-items: end;
 
 		@include lg {
-			grid-template-columns: auto 1fr 150px 1fr 1fr;
+			grid-template-columns: auto 1fr 150px 1fr auto;
+			gap: 10px 20px;
 		}
 
 		@include md {
@@ -98,7 +126,7 @@
 
 	&__extra-menu {
 		display: flex;
-		grid-column: span 4;
+		grid-column: span 3;
 		gap: 10px;
 		align-items: center;
 		justify-content: space-between;
@@ -151,6 +179,20 @@
 					height: 1px;
 				}
 			}
+		}
+	}
+
+	&__book {
+		min-height: auto;
+		padding: 15px 20px;
+		font-size: 14px;
+
+		@include hg {
+			min-height: auto;
+		}
+
+		@include md {
+			display: none;
 		}
 	}
 

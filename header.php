@@ -33,6 +33,8 @@
 				'menu_class' => 'reset-list header__extra-menu'
 			) ); ?>
 
+			<button class="btn header__book" type="button">Забронировать</button>
+
 			<div class="header__link">
 				Мы находимся
 				<a href="<?php echo $map_link; ?>" target="_blank">тут 71 км от СПБ</a>
